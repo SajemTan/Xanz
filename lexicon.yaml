@@ -409,7 +409,7 @@ kgj:
   active:
     - begin
     - start
-  habitual:
+  stative:
     - be a beginner
 lbd:
   date: 2021-12-01
@@ -514,7 +514,7 @@ bsl:
 dlb:
   head: dirt
   date: 2021-10-31
-  agent:
+  agentive:
     - dirt
 zsx:
   head: meat

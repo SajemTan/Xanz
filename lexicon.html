@@ -3,6 +3,11 @@
     <title>Xanz Lexicon</title>
     <script type="text/javascript" src="lexicon.js"></script>
     <meta charset="UTF-8" />
+    <style>
+      .conjugation > .conjugation {
+          padding-left: 20px;
+      }
+    </style>
   </head>
   <body onload="doSearch();">
     <div style="width: 100%; background-color: rgba(255, 255, 255, 0.9); position: fixed; left: 0px; top: 0px; padding: 15px;">
@@ -83,8 +88,93 @@
         ret.innerHTML = html;
         return ret;
       };
-      var conjugate = function(root, mode) {
-          return root.join('a');
+      var tricons = function(c1, v1, c2, v2, c3, v3) {
+          var nasals = {
+              p: 'mh',
+              b: 'm',
+              t: 'nh',
+              d: 'n',
+              s: 'ñh',
+              z: 'ñ',
+              g: 'ng',
+              á: 'a',
+              é: 'e',
+              í: 'i',
+              ó: 'o',
+              ý: 'y',
+              éú: 'eu'
+          };
+          var ret = c1;
+          if (nasals.hasOwnProperty(v1) && nasals.hasOwnProperty(c2)) {
+              ret += nasals[v1];
+              ret += nasals[c2];
+          } else {
+              ret += v1;
+              ret += c2;
+          }
+          if (nasals.hasOwnProperty(v2) && nasals.hasOwnProperty(c3)) {
+              ret += nasals[v2];
+              ret += nasals[c3];
+          } else {
+              ret += v2;
+              ret += c3;
+          }
+          ret += v3;
+          return ret;
+      };
+      var conjugate = function(prev, mode) {
+          var pmode = prev[prev.length-1][0];
+          var pform = prev[prev.length-1][1];
+          var patterns = {
+              agentive: ['á', '', 'e'],
+              intensive: ['a', 'a', ''],
+              passive: ['á', 'e', ''],
+              stative: ['a', 'i', ''],
+              perfective: ['e', 'á', ''],
+              patient: ['e', 'y', ''],
+              middle: ['eu', 'eu', ''],
+              witnessive: ['eu', 'éú', ''],
+              instrument: ['ó', 'a', ''],
+              active: ['u', 'í', ''],
+              causative: ['y', 'o', '']
+          };
+          if (patterns.hasOwnProperty(mode)) {
+              let v = patterns[mode];
+              return tricons(pform[0], v[0], pform[1], v[1], pform[2], v[2]);
+          } else if (mode == 'participle') {
+              return pform + 'el';
+          }
+          if (typeof pform == "string") {
+              return pform + '-' + mode;
+          } else {
+              console.log(pform);
+              return pform.join('_');
+          }
+      };
+      var makeList = function(ls) {
+          var ret = mkel('ul', '');
+          ls.forEach(function(s) {
+              ret.appendChild(mkel('li', s));
+          });
+          return ret;
+      };
+      var makeBox = function(conj, blob, prev) {
+          var ret = mkel('div', '');
+          ret.className = 'conjugation';
+          var pth = prev.concat([[conj, conjugate(prev, conj)]]);
+          ret.appendChild(mkel('b', conj + ": " + pth[pth.length-1][1]));
+          ret.appendChild(makeList(blob.gloss));
+          if (blob.note.length) {
+              ret.appendChild(mkel('b', 'Notes:'));
+              ret.appendChild(makeList(blob.note));
+          }
+          for (var k in blob) {
+              if (k == 'gloss' || k == 'note') {
+                  continue;
+              }
+              ret.appendChild(makeBox(k, blob[k], pth));
+          }
+          return ret;
       };
       var makeRow = function(blob) {
         var retel = document.createElement('tr');
@@ -101,14 +191,9 @@
         var ret = document.createElement('td');
           retel.appendChild(ret);
           if (blob.hasOwnProperty('root')) {
+              var prev = [["root", blob.root]];
               for (var k in blob.conj) {
-                  ret.appendChild(mkel('b', k + ": " + conjugate(blob.root, k)));
-                  var ls = mkel('ul', '');
-                  console.log(blob.gloss);
-                  blob.conj[k].gloss.forEach(function (s) {
-                      ls.appendChild(mkel('li', s));
-                  });
-                  ret.appendChild(ls);
+                  ret.appendChild(makeBox(k, blob.conj[k], prev));
               }
           }
         var ul;
