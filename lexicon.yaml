@@ -1,0 +1,536 @@
+xdz:
+  date: 2020-12-01
+  head: wisdom
+  agentive:
+    - seeker of knowledge
+    - Xanzite
+  stative:
+    - be knowledgeable
+    - be wise
+gsd:
+  date: 2020-12-02
+  head: organize
+  active:
+    - sort
+    - organize
+    - write down
+    - make record of
+  stative:
+    - write a book
+  agentive:
+    - book # (not actually totally sure on this one
+    - note:
+      - there's more than one nominalization pattern and I might decide later that "book" should be a different one)
+  instrument:
+    - position
+    - loc:
+      - again
+      - date: 2021-12-02
+ttd:
+  date: 2020-12-03
+  head: follow
+  active:
+    - follow
+    - get advice from
+  patient:
+    - leader
+    - commander
+    - note:
+      - borrowed into Sajem Tan as tetyt "king"
+  note:
+    - The people of Xanz live under a constitutional monarchy in which the primary role of the monarch is to be knowledgeable about organizational structures and to coordinate communication between the various governmental bodies. The monarch does have some direct power, though in recent times it is rarely used.
+kbp:
+  date: 2020-12-04
+  head: confuse
+kbp:
+  date: 2020-12-04
+  head: confuse
+  agentive:
+    - puzzle
+    - riddle
+  stative:
+    - be confusing
+    - be unexplained
+  active:
+    - confuse
+    - assume
+    - state without explanation
+pxl:
+  date: 2020-12-05
+  head: surround
+  active:
+    - encircle
+  passive:
+    - be surrounded
+    - participle:
+      - island
+  agentive:
+    - wall
+    - fence
+    - boundary marker
+    - note:
+      - páxle can refer to a defensive wall, such as of a city, though due to being at peace for several centuries and also living on islands, such constructions are rarely referred to in everyday speech and there exist technical terms preferred in academic literature.
+kdd:
+  date: 2020-12-06
+  head: speak
+  agentive:
+    - speaker
+  patient:
+    - language
+  active:
+    - speak
+    - say
+zbk:
+  date: 2020-12-07
+  head: flow
+  agentive:
+    - river
+  patient:
+    - water (especially freshwater)
+  active:
+    - to flow
+  stative:
+    - to wander
+    - to have no fixed home
+    - to take the easiest path
+xtd:
+  date: 2020-12-07
+  head: attract
+  active:
+    - to make oneself attractive
+    - to put on makeup
+  middle:
+    - to draw in
+    - note:
+      - ST xëtët "turtle"
+  stative:
+    - to be beautiful
+  witnessive:
+    - to observe attraction
+    - note:
+      - ST xëtën "cliff"
+  intensive:
+    - to pull strongly
+    - note:
+      - ST xatat "magnet
+  patient:
+    - an admirer
+  note:
+    - Among the Xanz islands, the 2 that have cliffs also have significant amounts of magnetic material in the sediment of the sea floor around them. Various fish ingest these magnets and then are hunted by xeuteud turtles which swallow larger magnets in order to pull the fish towards them. This is rarely sufficient to catch the fish, though the magnetism is often strong enough to noticeably hinder their escape.
+fthb:
+  date: 2020-12-08
+  head: sail
+  agentive:
+    - sailor
+    - merchant
+  intensive:
+    - sail through a storm
+  passive:
+    - to be transported on a ship
+    - to be captured by pirates
+  patient:
+    - ship, particularly one for crossing an ocean rather than a fishing vessel
+  witnessive:
+    - (of oneself) see while sailing
+    - (of another) tell an exaggerated or fanciful story
+  active:
+    - sail a boat
+wlb:
+  date: 2020-12-09
+  head: sing
+  active:
+    - sing
+    - chant
+  witnessive:
+    participle:
+      - circle
+  agentive:
+    - singer
+    - song leader
+  intensive:
+    participle:
+      - song-hog
+  note:
+    - Many Xanz celebrations and ritual observances involve standing in a circle and singing or chanting. The songs are frequently call and response and wálb refers to a person who is currently leading as opposed to someone whose job is leading songs. Most songs can be and often are led by anyone who knows all the words which results in nearly everyone leading at least occasionally. Someone who leads enough songs to make it hard for others to lead is called a walab. 
+g'd:
+  date: 2020-12-10
+  head: sit
+  agentive:
+    - seated person
+  witnessive:
+    - chair
+  patient:
+    - rear end
+  active:
+    - sit
+  middle:
+    - recline
+bdd:
+  date: 2020-12-11
+  head: sleep
+  passive:
+    - sleep
+sjd:
+  date: 2020-12-12
+  head: tangent? [see note]
+  agentive:
+    - a species of telepathic tree
+    - note:
+      - ST cömek
+      - The Sájde are a species of friendly, telepathic trees. They are extremely knowledgeable and are usually willing to function as a library and communications network. However, when talking, they often lose track of the original question and end up telling you many interesting and potentially useful things which are increasingly unrelated to the subject you came to them for.
+  passive:
+    - to be the addressee of a digression
+  active:
+    - to go on a tangent
+  patient:
+    - person talking to a sájde
+"'dp":
+  date: 2020-12-13
+  head: walk
+  patient:
+    - destination
+  witnessive:
+    - road
+    - path
+  middle:
+    - stroll
+  active:
+    - go
+thfb:
+  date: 2020-12-14
+  head: finish
+  perfective:
+    - to have finished
+  note:
+    - The other verbal forms have the expected meanings, though the active voice is relatively rare in comparison to the perfective.
+ddl:
+  date: 2020-12-15
+  head: stupidity, silliness
+  active:
+    - to do something dumb/silly
+  passive:
+    - to be led to do something dumb/silly
+  patient:
+    - joke
+    - prank
+bwd:
+  date: 2020-12-16
+  head: drink
+  active:
+    - drink
+  middle:
+    - share a drink
+    - go out for drinks
+    - get coffee
+tjw:
+  date: 2020-12-17
+  head: story
+  agentive:
+    - storyteller
+  intensive:
+    - to tell a very engrossing story
+  active:
+    - to tell a story
+bgth:
+  date: 2020-12-18
+  head: eat
+  active:
+    - eat
+  witnessive:
+    participle:
+      - dinner table
+      - note:
+        - this is not used of a table holding maps, etc.
+dxd:
+  date: 2020-12-19
+  head: remember, remind
+  agentive:
+    - a memory
+    - something that triggers a memory
+  active:
+    - remind
+  passive:
+    - remember
+ssp:
+  date: 2020-12-20
+  head: greet
+  active:
+    - greet
+  passive:
+    - be greeted
+    - participle:
+      - vocative:
+        - hello
+wts:
+  date: 2020-12-21
+  head: demonstrate
+  active:
+    - show
+    - prove
+    - demonstrate
+    - argue
+  patient:
+    - subject
+    - topic of conversation
+  passive:
+    - be proven
+  note:
+    - All this so that WTS can be found at the beginnings of math proofs in both English and Xanz? ... maybe
+bdth:
+  date: 2020-12-22
+  head: alone
+  agentive:
+    - "1"
+tgth:
+  date: 2020-12-22
+  head: repeat, recur
+  patient:
+    - "2"
+flth:
+  date: 2020-12-22
+  head: "3"
+  stative:
+    - "4"
+bgl:
+  date: 2020-12-22
+  head: "4"
+  stative:
+    - "4"
+tdx:
+  date: 2020-12-22
+  head: "5"
+  patient:
+    - "5"
+jf':
+  date: 2020-12-22
+  head: "6"
+  passive:
+    - "6"
+kgw:
+  date: 2020-12-22
+  head: "12"
+  stative:
+    - "12"
+bthd:
+  date: 2020-12-22
+  head: "144"
+  stative:
+    - "144"
+ek:
+  date: 2020-12-22
+  root: false
+  head: and
+pkd:
+  date: 2020-12-23
+  head: swim
+  active:
+    - swim
+  agentive:
+    - fish
+pds:
+  date: 2020-12-24
+  head: celebrate
+  active:
+    - celebrate
+    - observe
+    - commemorate
+  intensive:
+    - celebrate the harvest or creation festivals
+  note:
+    - For both of these verbs, the participle uses typically refer to the celebration rather than the people celebrating. The intensive form refers specifically to the Padasi Tegyth, the 2 great festivals of the Xanz calendar. The first is the autumn harvest festival, the end of which marks the beginning of the new year. The other is in the late spring and commemorates the day on which the world is held to have been created by the Walab and Dadal of the World Beyond.
+gxth:
+  date: 2020-12-25
+  head: count
+  active:
+    - count
+    - enumerate
+    - number
+  instrument:
+    - number
+  patient:
+    - countable object or collection
+  note:
+    - In common usage, gexyth is an inexact quantity of moderate size, probably greater than or equal to "several" and less than "a lot". A gexyth of money would generally constitute a decent wage and if you've been at someone's house more than a gexyth of days you've almost certainly overstayed your welcome.
+    - In technical usage, gexyth can refer to a finite set or a countable set or both, depending on the author (set theory is a relatively new field and the terminology hasn't been standardized yet). It is also sometimes used to distinguish between count and mass nouns, which is a more agreed upon though less common usage as Xanz does not mark number and opportunities to study other languages have been limited until fairly recently.
+fb':
+  date: 2020-12-16
+  head: give
+  active:
+    - give
+    - note:
+      - fubí can have as a direct object either the recipient, in which case it means "give gifts to" typically without expressing what those gifts are, or it can take the gift as a direct object in which case the recipient can appear in the towards-genitive.
+  passive:
+    - receive
+  instrument:
+    - gift
+sjj:
+  date: 2020-12-27
+  head: burn, cook, set on fire
+  active:
+    - set on fire
+  instrument:
+    - flame
+  agentive:
+    - flint
+    - match
+    - etc.
+  intensive:
+    - immolate
+  passive:
+    - be set on fire
+    - be lit
+jps:
+  date: 2020-12-28
+  head: wash
+  active:
+    - wash
+    - rinse
+  instrument:
+    - water
+    - note:
+      - jomhas is specifically water that is intended for cleaning, with or without soap.
+twt:
+  date: 2020-12-29
+  head: small
+  active:
+    - become small
+  stative:
+    - be small
+tbg:
+  date: 2020-12-30
+  head: laugh
+  active:
+    - laugh
+  causative:
+    - tell a joke
+kgj:
+  date: 2020-12-31
+  head: begin
+  active:
+    - begin
+    - start
+  habitual:
+    - be a beginner
+lbd:
+  date: 2021-12-01
+  head: stick, adhere
+  agentive:
+    - syrup
+  causative:
+    participle:
+      - glue
+  stative:
+    - to be stuck to something
+  active:
+    - to be an admirer of someone, especially to an excessive degree
+dgl:
+  date: 2021-12-02
+  head: error
+  intensive:
+    participle:
+      - catastrophic error
+  active:
+    participle:
+      - mistake
+  witnessive:
+    - observe someone else being in error
+    - S1O3:
+      - note:
+        - One of the more dismissive ways to disagree with someone Áthideugéúl goñhaden. ãθideugẽũl gõɲ̊aden S1O3-error/WITNESS position-INST "I see that he is wrong again." # how to present this?
+ol:
+  root: false
+  date: 2021-12-03
+  head: but
+di:
+  root: false
+  date: 2021-12-03
+  head: first person
+  nom:
+    form: di
+  nom-away:
+    form: eni
+  nom-to:
+    form: ani
+  gen:
+    form: díxi
+  gen-away:
+    form: edíxi
+  gen-to:
+    form: aníxi
+  loc:
+    form: de'en
+  loc-away:
+    form: ed'en
+  loc-to:
+    form: an'en
+xow:
+  root: false
+  date: 2021-12-03
+  head: third person inanimate
+  nom:
+    form: xow
+  gen:
+    form: xwi
+    date: 2021-10-31
+ffd:
+  date: 2021-12-04
+  head: dry
+  instrument:
+    - towel
+  stative:
+    - be(come) dry
+  intensive:
+    - shake oneself off, like a dog does
+sst:
+  date: 2021-12-05
+  head: leave
+  active:
+    - leave
+  intensive:
+    - flee
+tan:
+  root: false
+  head: question marker
+  date: 2021-10-31
+  none:
+    - hbo ה (as SCONJ)
+    - who (as DET)
+    - what (as DET)
+llf:
+  head: large
+  date: 2021-10-31
+tdl:
+  head: heavy
+  date: 2021-10-31
+jen:
+  head: only
+  date: 2021-10-31
+  root: false
+bsl:
+  head: rock
+  date: 2021-10-31
+  patient:
+    - rock
+dlb:
+  head: dirt
+  date: 2021-10-31
+  agent:
+    - dirt
+zsx:
+  head: meat
+  date: 2021-10-31
+  intensive:
+    - participle:
+      - meat
+pwth:
+  head: breath
+  date: 2021-10-31
+  instrument:
+    - humid air
+    - breath
+gzj:
+  head: dry air
+  date: 2021-10-31
+  intensive:
+    - participle:
+      - dry air

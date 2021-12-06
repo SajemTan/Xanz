@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>Xanz Lexicon</title>
+    <script type="text/javascript" src="lexicon.js"></script>
+    <meta charset="UTF-8" />
+  </head>
+  <body onload="doSearch();">
+    <div style="width: 100%; background-color: rgba(255, 255, 255, 0.9); position: fixed; left: 0px; top: 0px; padding: 15px;">
+      <span>Search</span>
+      <select id="searchwhat" onchange="doSearch();">
+        <option value="all">Everything</option>
+        <option value="root">Roots</option>
+        <option value="def">Definitions</options>
+      </select>
+      <span>for</span>
+      <input type="text" id="search" onkeyup="doSearch();"></input>
+      <label for="regex">Regex? </label>
+      <input type="checkbox" id="regex" onclick="doSearch();"></input>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Root</th>
+          <th>Definition</th>
+        </tr>
+      </thead>
+      <tbody id="defs"></tbody>
+    </table>
+    <p id="matches"></p>
+    <script>
+      var search_all = [];
+      var search_root = [];
+      var search_defs = [];
+      var search_nodes = [];
+      var lexicon_flat_arr = lexicon.root.concat(lexicon.non_root);
+      var searchMatch = function(txt, queryString, isRegex) {
+        function decodeHtml(html) {
+          var txt = document.createElement("textarea");
+          txt.innerHTML = html;
+          return txt.value;
+        }
+        var str = decodeHtml(txt);
+        var find = decodeHtml(queryString);
+        if (!isRegex) {
+          return str.toLowerCase().includes(find.toLowerCase());
+        } else {
+          return str.match(queryString) != null;
+        }
+      };
+      var doSearch = function() {
+        var searchstr = document.getElementById("search").value;
+        var isRegex = document.getElementById("regex").checked;
+        var l = search_nodes;
+        var srch;
+        var mode = document.getElementById('searchwhat').value;
+        if (mode == 'all') {
+          srch = search_all;
+        } else if (mode == 'root') {
+          srch = search_root;
+        } else if (mode == 'def') {
+          srch = search_defs;
+        }
+        var matches = 0
+        for (var i = 0; i < l.length; i++) {
+          l[i].style.display = searchMatch(srch[i], searchstr, isRegex) ? "" : "none";
+          if (l[i].style.display == "") { matches++; }
+        }
+        document.getElementById("matches").innerHTML = matches + " matches for " + searchstr;
+      };
+      var setSearch = function(str) {
+        document.getElementById("search").value = str;
+        doSearch();
+      }
+      var makeLink = function(word, update) {
+        return "<a href=\"#\" onclick=\"setSearch('" + word + "')\">" + word + "</a>";
+      };
+      var mkel = function(tag, html) {
+        var ret = document.createElement(tag);
+        ret.innerHTML = html;
+        return ret;
+      };
+      var conjugate = function(root, mode) {
+          return root.join('a');
+      };
+      var makeRow = function(blob) {
+        var retel = document.createElement('tr');
+          var stem;
+          if (blob.hasOwnProperty('root')) {
+              stem = blob.root.join('-');
+          } else {
+              stem = blob.stem;
+          }
+          retel.id = stem;
+        retel.setAttribute('data-json', escape(JSON.stringify(blob)));
+        retel.setAttribute('data-word', stem);
+        retel.appendChild(mkel('td', "<b>" + stem + "</b><br/>" + blob.gloss));
+        var ret = document.createElement('td');
+          retel.appendChild(ret);
+          if (blob.hasOwnProperty('root')) {
+              for (var k in blob.conj) {
+                  ret.appendChild(mkel('b', k + ": " + conjugate(blob.root, k)));
+                  var ls = mkel('ul', '');
+                  console.log(blob.gloss);
+                  blob.conj[k].gloss.forEach(function (s) {
+                      ls.appendChild(mkel('li', s));
+                  });
+                  ret.appendChild(ls);
+              }
+          }
+        var ul;
+        var df;
+        return retel;
+      };
+      var setup = function() {
+        var defs = document.getElementById('defs');
+        defs.innerHTML = '';
+        for (var i = 0; i < lexicon_flat_arr.length; i++) {
+          defs.appendChild(makeRow(lexicon_flat_arr[i]));
+        }
+        search_nodes = document.getElementById("defs").childNodes;
+        var s;
+        var node;
+        var df;
+        for (var i = 0; i < search_nodes.length; i++) {
+          s = '';
+          node = search_nodes[i];
+          search_all.push(node.outerHTML);
+          search_root.push(node.id);
+          df = node.getElementsByClassName('def');
+          for (var j = 0; j < df.length; j++) {
+            s += df[j].innerHTML + ' ';
+          }
+          search_defs.push(s);
+        }
+      };
+      setup();
+    </script>
+  </body>
+</html>
