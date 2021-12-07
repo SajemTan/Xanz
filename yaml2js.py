@@ -34,6 +34,8 @@ def conj_from_yaml(blob):
             for k in b:
                 if k == 'note':
                     dct['note'] += b[k]
+                elif k == 'form':
+                    dct['form'] = b[k]
                 elif k == 'date':
                     continue
                 else:

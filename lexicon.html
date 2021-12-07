@@ -151,6 +151,11 @@
               return pform.join('_');
           }
       };
+      var dispWord = function(prev) {
+          // TODO: vowel deletion
+          // probably also move nasalization in here
+          return prev[prev.length-1][1];
+      };
       var makeList = function(ls) {
           var ret = mkel('ul', '');
           ls.forEach(function(s) {
@@ -161,15 +166,21 @@
       var makeBox = function(conj, blob, prev) {
           var ret = mkel('div', '');
           ret.className = 'conjugation';
-          var pth = prev.concat([[conj, conjugate(prev, conj)]]);
-          ret.appendChild(mkel('b', conj + ": " + pth[pth.length-1][1]));
+          var c;
+          if (blob.hasOwnProperty('form')) {
+              c = blob.form;
+          } else {
+              c = conjugate(prev, conj);
+          }
+          var pth = prev.concat([[conj, c]]);
+          ret.appendChild(mkel('b', conj + ": " + dispWord(pth)));
           ret.appendChild(makeList(blob.gloss));
           if (blob.note.length) {
               ret.appendChild(mkel('b', 'Notes:'));
               ret.appendChild(makeList(blob.note));
           }
           for (var k in blob) {
-              if (k == 'gloss' || k == 'note') {
+              if (k == 'gloss' || k == 'note' || k == 'form') {
                   continue;
               }
               ret.appendChild(makeBox(k, blob[k], pth));
@@ -177,28 +188,29 @@
           return ret;
       };
       var makeRow = function(blob) {
-        var retel = document.createElement('tr');
+          var retel = document.createElement('tr');
+          var prev;
           var stem;
+          var key;
           if (blob.hasOwnProperty('root')) {
               stem = blob.root.join('-');
+              key = stem + ' ' + blob.root.join('');
+              prev = [["root", blob.root]];
           } else {
               stem = blob.stem;
+              key = blob.stem;
+              prev = [["stem", blob.stem]];
           }
           retel.id = stem;
-        retel.setAttribute('data-json', escape(JSON.stringify(blob)));
-        retel.setAttribute('data-word', stem);
-        retel.appendChild(mkel('td', "<b>" + stem + "</b><br/>" + blob.gloss));
-        var ret = document.createElement('td');
+          retel.setAttribute('data-json', escape(JSON.stringify(blob)));
+          retel.setAttribute('data-word', key);
+          retel.appendChild(mkel('td', "<b>" + stem + "</b><br/>" + blob.gloss));
+          var ret = document.createElement('td');
           retel.appendChild(ret);
-          if (blob.hasOwnProperty('root')) {
-              var prev = [["root", blob.root]];
-              for (var k in blob.conj) {
-                  ret.appendChild(makeBox(k, blob.conj[k], prev));
-              }
+          for (var k in blob.conj) {
+              ret.appendChild(makeBox(k, blob.conj[k], prev));
           }
-        var ul;
-        var df;
-        return retel;
+          return retel;
       };
       var setup = function() {
         var defs = document.getElementById('defs');

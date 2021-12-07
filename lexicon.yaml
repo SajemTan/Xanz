@@ -142,13 +142,13 @@ wlb:
     - sing
     - chant
   witnessive:
-    participle:
+    - participle:
       - circle
   agentive:
     - singer
     - song leader
   intensive:
-    participle:
+    - participle:
       - song-hog
   note:
     - Many Xanz celebrations and ritual observances involve standing in a circle and singing or chanting. The songs are frequently call and response and wálb refers to a person who is currently leading as opposed to someone whose job is leading songs. Most songs can be and often are led by anyone who knows all the words which results in nearly everyone leading at least occasionally. Someone who leads enough songs to make it hard for others to lead is called a walab. 
@@ -237,7 +237,7 @@ bgth:
   active:
     - eat
   witnessive:
-    participle:
+    - participle:
       - dinner table
       - note:
         - this is not used of a table holding maps, etc.
@@ -417,7 +417,7 @@ lbd:
   agentive:
     - syrup
   causative:
-    participle:
+    - participle:
       - glue
   stative:
     - to be stuck to something
@@ -427,10 +427,10 @@ dgl:
   date: 2021-12-02
   head: error
   intensive:
-    participle:
+    - participle:
       - catastrophic error
   active:
-    participle:
+    - participle:
       - mistake
   witnessive:
     - observe someone else being in error
@@ -446,32 +446,36 @@ di:
   date: 2021-12-03
   head: first person
   nom:
-    form: di
+    - form: di
   nom-away:
-    form: eni
+    - form: eni
   nom-to:
-    form: ani
+    - form: ani
   gen:
-    form: díxi
+    - form: díxi
   gen-away:
-    form: edíxi
+    - form: edíxi
   gen-to:
-    form: aníxi
+    - form: aníxi
   loc:
-    form: de'en
+    - form: de'en
   loc-away:
-    form: ed'en
+    - form: ed'en
   loc-to:
-    form: an'en
+    - form: an'en
 xow:
   root: false
   date: 2021-12-03
   head: third person inanimate
   nom:
-    form: xow
+    - form: xow
+  nom-away:
+    - form: exow
+    - date: 2021-12-06
+    - thus
   gen:
-    form: xwi
-    date: 2021-10-31
+    - form: xwi
+    - date: 2021-10-31
 ffd:
   date: 2021-12-04
   head: dry
