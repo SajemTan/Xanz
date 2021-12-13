@@ -538,3 +538,58 @@ gzj:
   intensive:
     - participle:
       - dry air
+tzb:
+  head: down
+  date: 2021-12-07
+  passive:
+    - go down
+    - descend
+  causative:
+    - bring down
+    - lower
+  instrument:
+    - staircase
+    - ramp
+  agentive:
+    - sinker (e.g. on a fishing rod)
+    - weight
+bfl:
+  head: slow
+  date: 2021-12-08
+  active:
+    - slow down
+  agentive:
+    - slow-snake
+    - note:
+      - The slow-snake looks like a snake but has rather thicker scales than the average snake and moves rather like an inchworm. It mainly eats grass.
+wan:
+  head: not
+  date: 2021-12-09
+  root: false
+  none:
+    - negative copula
+    - note:
+      - cliticizes to complement
+dbb:
+  head: above
+  date: 2021-12-10
+  stative:
+    - be above
+  causative:
+    - lift
+    - rise
+  intensive:
+    - to be very high above, such as stars
+gon:
+  head: if
+  date: 2021-12-11
+  root: false
+sgw:
+  head: rub
+  date: 2021-12-12
+  active:
+    - rub
+  intensive:
+    - scrub
+  instrument:
+    - sandpaper
