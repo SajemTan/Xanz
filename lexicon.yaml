@@ -18,9 +18,9 @@ gsd:
   stative:
     - write a book
   agentive:
-    - book # (not actually totally sure on this one
+    - book # (not actually totally sure on this one)
     - note:
-      - there's more than one nominalization pattern and I might decide later that "book" should be a different one)
+      - there's more than one nominalization pattern and I might decide later that "book" should be a different one
   instrument:
     - position
     - loc:
@@ -286,6 +286,11 @@ tgth:
   head: repeat, recur
   patient:
     - "2"
+  middle:
+    - participle:
+      - away-nom:
+        - date: 2021-12-30
+        - again
 flth:
   date: 2020-12-22
   head: "3"
@@ -306,6 +311,9 @@ jf':
   head: "6"
   passive:
     - "6"
+  agentive:
+    - date: 2021-12-30
+    - week
 kgw:
   date: 2020-12-22
   head: "12"
@@ -349,9 +357,9 @@ gxth:
     - number
   patient:
     - countable object or collection
-  note:
-    - In common usage, gexyth is an inexact quantity of moderate size, probably greater than or equal to "several" and less than "a lot". A gexyth of money would generally constitute a decent wage and if you've been at someone's house more than a gexyth of days you've almost certainly overstayed your welcome.
-    - In technical usage, gexyth can refer to a finite set or a countable set or both, depending on the author (set theory is a relatively new field and the terminology hasn't been standardized yet). It is also sometimes used to distinguish between count and mass nouns, which is a more agreed upon though less common usage as Xanz does not mark number and opportunities to study other languages have been limited until fairly recently.
+    - note:
+      - In common usage, gexyth is an inexact quantity of moderate size, probably greater than or equal to "several" and less than "a lot". A gexyth of money would generally constitute a decent wage and if you've been at someone's house more than a gexyth of days you've almost certainly overstayed your welcome.
+      - In technical usage, gexyth can refer to a finite set or a countable set or both, depending on the author (set theory is a relatively new field and the terminology hasn't been standardized yet). It is also sometimes used to distinguish between count and mass nouns, which is a more agreed upon though less common usage as Xanz does not mark number and opportunities to study other languages have been limited until fairly recently.
 fb':
   date: 2020-12-16
   head: give
@@ -593,3 +601,152 @@ sgw:
     - scrub
   instrument:
     - sandpaper
+"'db":
+  head: hear
+  date: 2021-12-13
+  passive:
+    - hear
+  active:
+    - listen
+  causative:
+    - be heard
+  instrument:
+    - ear
+  agentive:
+    - student
+gfs:
+  head: want
+  date: 2021-12-13
+  stative:
+    - want
+    - desire
+  active:
+    - seek
+    - search for
+  patient:
+    - a desire
+  intensive:
+    - long for
+    - pine after
+"-on":
+  head: reflexive clitic
+  date: 2021-12-16
+  root: false
+kwk:
+  head: play
+  date: 2021-12-17
+  instrument:
+    - toy
+    - hacky-sack
+    - note:
+      - Hacky-sacks are not the only common toy, but they are by far the most common one that doesn't have a more specific term in common usage.
+  active:
+    - play
+  witnessive:
+    - baby-sit
+dzb:
+  head: similar
+  date: 2021-12-18
+  stative:
+    - be similar
+    - be alike
+  causative:
+    - compare
+alem:
+  head: beside
+  date: 2021-12-19
+  root: false
+bxj:
+  head: exchange
+  date: 2021-12-20
+  active:
+    - trade
+    - exchange
+  patient:
+    - tradable goods
+  agentive:
+    - merchant
+  middle:
+    - buy
+    - purchase
+  instrument:
+    - money
+jzb:
+  head: hurry along
+  date: 2021-12-21
+  active:
+    - hurry (someone else)
+    - speed along
+  passive:
+    - speed up
+  patient:
+    - sled
+    - out-of-control cart
+tthl:
+  head: forget
+  date: 2021-12-22
+  passive:
+    - forget
+  active:
+    - disregard
+    - ignore
+dbw:
+  head: practice
+  date: 2021-12-22
+  stative:
+    - practice
+    - note:
+      - anháthellwan dabiwel = learned memory
+      - anháthellwan dabiwelwan = incidental memory
+"j'l":
+  head: be (copula)
+  date: 2021-12-24
+  stative:
+    - participle:
+      - essence
+      - note:
+        - The stative of this verb is used as the copula in tenses other than the present. The present tense is very rarely used, though some philosophers have adopted the participle ja'ilel as a technical term comparable to "essence" and/or "existence", depending on who's talking.
+pxj:
+  head: heat
+  date: 2021-12-25
+  stative:
+    - be hot
+  active:
+    - become hot
+  witnessive:
+    - note:
+      - peuxéújel puxíjelwan ~ a watched pot never boils
+thwk:
+  head: find
+  date: 2021-12-30
+  active:
+    - find (while actively seeking)
+  passive:
+    - find (by accident)
+blb:
+  head: negative verb
+  date: 2021-12-30
+  perfective:
+    - not do something
+    - note:
+      - verb is placed in the away-nominative participle
+      - in modern Xanz, a direct object remains unchanged
+tkg:
+  head: inside
+  date: 2021-12-30
+  causative:
+    - participle:
+      - threshold
+  stative:
+    - be indoors
+tthp:
+  head: day
+  date: 2021-12-30
+  causative:
+    - be the sun
+    - participle:
+      - the sun
+  agentive:
+    - a day
+  instrument:
+    - sunlight
