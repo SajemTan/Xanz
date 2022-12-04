@@ -88,44 +88,10 @@
         ret.innerHTML = html;
         return ret;
       };
-      var tricons = function(c1, v1, c2, v2, c3, v3) {
-          var nasals = {
-              p: 'mh',
-              b: 'm',
-              t: 'nh',
-              d: 'n',
-              s: 'ñh',
-              z: 'ñ',
-              g: 'ng',
-              á: 'a',
-              é: 'e',
-              í: 'i',
-              ó: 'o',
-              ý: 'y',
-              éú: 'eu'
-          };
-          var ret = c1;
-          if (nasals.hasOwnProperty(v1) && nasals.hasOwnProperty(c2)) {
-              ret += nasals[v1];
-              ret += nasals[c2];
-          } else {
-              ret += v1;
-              ret += c2;
-          }
-          if (nasals.hasOwnProperty(v2) && nasals.hasOwnProperty(c3)) {
-              ret += nasals[v2];
-              ret += nasals[c3];
-          } else {
-              ret += v2;
-              ret += c3;
-          }
-          ret += v3;
-          return ret;
-      };
       var conjugate = function(prev, mode) {
-          var pmode = prev[prev.length-1][0];
-          var pform = prev[prev.length-1][1];
-          var patterns = {
+          let pmode = prev[prev.length-1][0];
+          let pform = prev[prev.length-1][1];
+          const patterns = {
               agentive: ['á', '', 'e'],
               intensive: ['a', 'a', ''],
               passive: ['á', 'e', ''],
@@ -138,12 +104,39 @@
               active: ['u', 'í', ''],
               causative: ['y', 'o', '']
           };
+          const verb_pref = {
+              S1O2: 'ana',
+              S1O3: 'áthi',
+          };
+          const noun_affix = {
+              nom: ['', ''],
+              'nom-away': ['e', ''],
+              'nom-to': ['á', ''],
+              gen: ['', 'i'],
+              'gen-away': ['e', 'i'],
+              'gen-to': ['á', 'i'],
+              loc: ['', 'en'],
+              'loc-away': ['e', 'en'],
+              'loc-to': ['á', 'en'],
+              // TODO: standardize in some direction
+              'away-nom': ['e', ''],
+              'vocative': ['á', ''],
+          };
           if (patterns.hasOwnProperty(mode)) {
               let v = patterns[mode];
-              return tricons(pform[0], v[0], pform[1], v[1], pform[2], v[2]);
+              let c = pform;
+              return c[0] + v[0] + c[1] + v[1] + c[2] + v[2];
           } else if (mode == 'participle') {
               return pform + 'el';
+          } else if (verb_pref.hasOwnProperty(mode)) {
+              return verb_pref[mode] + pform;
+          } else if (noun_affix.hasOwnProperty(mode)) {
+              let na = noun_affix[mode];
+              return na[0] + pform + na[1];
+          } else if (mode == 'none') {
+              return pform;
           }
+          console.log(['TODO', pform, mode]);
           if (typeof pform == "string") {
               return pform + '-' + mode;
           } else {
@@ -151,10 +144,129 @@
               return pform.join('_');
           }
       };
-      var dispWord = function(prev) {
+      var phono = function(ur) {
+          const ph = /[mnñt]h|ng|[ie]u|[íé]ú|[pbtdszkg\'mnñfxwlj]|[aeiouyáéíóúý]/g;
+          let pls = ur.match(ph);
+          const nasal_vow = {
+              á: 'a',
+              é: 'e',
+              í: 'i',
+              ó: 'o',
+              ú: 'u',
+              ý: 'y',
+          };
+          const nasal_cons = {
+              p: 'mh',
+              b: 'm',
+              t: 'nh',
+              d: 'n',
+              s: 'ñh',
+              z: 'ñ',
+              g: 'ng',
+          };
+          const vow = /[ie]u|[íé]ú|[aeiouyáéíóúý]/;
+          let vidx = [];
+          let denas = [];
+          for (let i = 0; i < pls.length-1; i++) {
+              let v = pls[i];
+              if (vow.test(v)) {
+                  vidx.push(i);
+              } else {
+                  continue;
+              }
+              let c = pls[i+1];
+              if (nasal_vow.hasOwnProperty(v) && nasal_cons.hasOwnProperty(c)) {
+                  denas.push(i);
+                  pls[i+1] = nasal_cons[c];
+                  i++;
+              }
+          }
+          if (vow.test(pls[pls.length-1])) {
+              vidx.push(pls.length-1);
+          }
+          const unstress = /[ouyóúý]/;
+          let stress = [];
+          let del = [];
+          for (let i = 0; i < vidx.length; i++) {
+              if (i % 2 == 0) {
+                  stress.push(vidx[i]);
+              } else if (unstress.test(pls[vidx[i]])) {
+                  del.push(vidx[i]);
+              }
+          }
+          if (del.length && del[del.length-1] > stress[stress.length-1]) {
+              del.pop();
+          }
+          const ipa = {
+              p: 'p',
+              mh: 'm̥',
+              b: 'b',
+              m: 'm',
+	          t: 't',
+              nh: 'n̥',
+              d: 'd',
+              n: 'n',
+	          s: 's',
+              ñh: 'ɲ̊',
+              z: 'ʤ',
+              ñ: 'ɲ',
+	          k: 'k',
+              g: 'g',
+              ng: 'ŋ',
+	          "'": 'ʔ',
+              f: 'f',
+	          th: 'θ',
+		      x: 'x',
+              w: 'w',
+	          l: 'l',
+	          j: 'j',
+	          i: 'i',
+	          y: 'ɨ',
+              u: 'u',
+              e: 'ɛ',
+		      o: 'ɔ',
+              a: 'a',
+              í: 'ĩ',
+              á: 'ã',
+              ó: 'ɔ̃',
+              é: 'ɛ̃',
+              ú: 'ũ',
+              ý: 'ɨ̃',
+              eu: 'ɛu',
+              iu: 'iu',
+              éú: 'ɛ̃ũ',
+              íú: 'ĩũ',
+          };
+          let ostr = '';
+          let istr = '';
+          for (let i = 0; i < pls.length; i++) {
+              let d = del.indexOf(i);
+              if (d != -1) continue;
+              let n = denas.indexOf(i);
+              if (n != -1) {
+                  ostr += nasal_vow[pls[i]];
+              } else {
+                  ostr += pls[i];
+              }
+              istr += ipa[pls[i]];
+              // TODO: figure out where the syllable boundary is
+              // so we can add these properly
+              //const primary_stress = 'ˈ';
+              //const secondary_stress = 'ˌ';
+              //let s = stress.indexOf(i);
+          }
+          return [ostr, istr];
+      };
+      var dispWord = function(conj, prev) {
           // TODO: vowel deletion
           // probably also move nasalization in here
-          return prev[prev.length-1][1];
+          let ur = prev[prev.length-1][1];
+          let forms = phono(ur);
+          let ret = mkel('span', conj + ': ');
+          ret.appendChild(mkel('b', forms[0]));
+          ret.innerHTML += ' /' + forms[1] + '/';
+          //ret.appendChild(mkel('i', '/' + forms[1] + '/'));
+          return ret;
       };
       var makeList = function(ls) {
           var ret = mkel('ul', '');
@@ -173,7 +285,7 @@
               c = conjugate(prev, conj);
           }
           var pth = prev.concat([[conj, c]]);
-          ret.appendChild(mkel('b', conj + ": " + dispWord(pth)));
+          ret.appendChild(dispWord(conj, pth));
           ret.appendChild(makeList(blob.gloss));
           if (blob.note.length) {
               ret.appendChild(mkel('b', 'Notes:'));

@@ -256,11 +256,17 @@ ssp:
   head: greet
   active:
     - greet
+    - S1O2 :
+        - I greet you
+        - note:
+            - a moderately formal greeting
   passive:
     - be greeted
     - participle:
       - vocative:
         - hello
+        - note:
+            - a moderately informal greeting
 wts:
   date: 2020-12-21
   head: demonstrate
@@ -750,3 +756,28 @@ tthp:
     - a day
   instrument:
     - sunlight
+dwd:
+  head: birth
+  date: 2022-12-01
+  witnessive:
+    - be a midwife
+  causative:
+    - give birth
+  active:
+    - be born
+    - participle:
+        - infant
+        - note:
+            - usually only refers to a child in days immediately preceding or following birth
+zdl:
+  head: mutter
+  date: 2022-12-02
+  active:
+    - mutter
+    - mumble
+gld:
+  head: distract
+  date: 2022-12-03
+  passive:
+    - be distracted
+    - devote inordinate effort to endeavors of minor importance
