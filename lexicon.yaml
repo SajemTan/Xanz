@@ -112,7 +112,7 @@ xtd:
   intensive:
     - to pull strongly
     - note:
-      - ST xatat "magnet
+      - ST xatat "magnet"
   patient:
     - an admirer
   note:
@@ -203,6 +203,10 @@ thfb:
     - to have finished
   note:
     - The other verbal forms have the expected meanings, though the active voice is relatively rare in comparison to the perfective.
+  patient:
+    - totality
+    - entirety
+    - date: 2022-12-17
 ddl:
   date: 2020-12-15
   head: stupidity, silliness
@@ -517,6 +521,8 @@ tan:
 llf:
   head: large
   date: 2021-10-31
+  active:
+    - be large
 tdl:
   head: heavy
   date: 2021-10-31
@@ -781,3 +787,181 @@ gld:
   passive:
     - be distracted
     - devote inordinate effort to endeavors of minor importance
+xlz:
+  head: complicate
+  date: 2022-12-04
+  stative:
+    - be complicated
+  causative:
+    - provide nuance
+    - participle:
+        - expert
+        - pedant
+        - note:
+            - commonly "dabiwelek xylzel" for expert (practicing and nuancing) vs "gáldelek xylzel" for pedant (being off-topic and nuancing)
+  witnessive:
+    - recognize the complexity of a situation
+  instrument:
+    - edge case
+bzd:
+  head: buzz
+  date: 2022-12-05
+  stative:
+    - produce a buzzing sound
+    - participle:
+        - a circular metal instrument, typically between 6 and 18 inches across, which is played by running a stick around the outer edge, comparable to the "singing bells" technique for playing handbells
+  causative:
+    - to play a bazidel
+  instrument:
+    - the stick used to play a bazidel
+  perfective:
+    - participle:
+        - a type of insect native to the mainland
+        - nom-to:
+            - (idiomatic)
+            - note:
+                - instructing someone to "bugíth amezanel" ("eat towards a buzzing thing") is comparable to the English "jump in a lake" and is partially borrowed and partially calqued from the Sajem Tan "mazuhn kygykum" ("eat a bug") of comparable idiomatic usage
+"'xp":
+  head: sneak
+  date: 2022-12-06
+  passive:
+    - be snuck up on
+    - participle:
+        - the back of something
+  active:
+    - sneak
+    - evade
+    - hide (intransitive)
+  causative:
+    - hide (transitive)
+"p't":
+  head: shine
+  date: 2022-12-07
+  intensive:
+    - participle:
+        - the moon
+  instrument:
+    - lamp
+    - any fairly steady light source (not an open flame), often (but not necessarily) portable
+  stative:
+    - emit light steadily
+    - participle:
+        - star
+dpt:
+  head: limit
+  date: 2022-12-08
+  passive:
+    - be bounded
+    - be limited
+    - be finite
+  active:
+    - place limits on
+    - legislate
+  instrument:
+    - fence
+    - rule
+inel:
+  root: false
+  head: for, since, in that
+  date: 2022-12-17
+zdj:
+  head: increase
+  date: 2022-12-17
+  active:
+    - increment
+  intensive:
+    - multiply
+  patient:
+    - additional thing
+ktd:
+  head: change
+  date: 2022-12-17
+  active:
+    - change
+    - cause something to become different
+  passive:
+    - change
+    - become different
+    - note:
+        - uses away-nom and towards-nom cases for prior state and result state
+  instrument:
+    - mathematical operator or operation
+ugi:
+  head: also
+  root: false
+  date: 2022-12-17
+kaj:
+  head: how
+  root: false
+  date: 2022-12-17
+jdk:
+  head: include
+  date: 2022-12-17
+  stative:
+    - use
+    - include
+    - note:
+        - uses the towards-loc case to indicate the set or group that the object is being included in
+loj:
+  head: than (preposition of comparison)
+  root: false
+  date: 2022-12-17
+djj:
+  head: long
+  date: 2022-12-17
+  stative:
+    - be slow
+    - be late
+    - be long
+    - be delayed
+je':
+  head: necessary
+  root: false
+  date: 2022-12-17
+  note: occurs with potential mood to express necessity
+ox:
+  head: "yes"
+  root: false
+  date: 2022-12-17
+lu:
+  head: "no"
+  root: false
+  date: 2022-12-17
+dfk:
+  head: support
+  date: 2022-12-24
+  active:
+    - prop up
+    - stop from falling
+  stative:
+    - support
+  agentive:
+    - neck
+    - pillar
+len:
+  head: particle requesting affirmation
+  date: 2022-12-24
+  root: false
+g'z:
+  head: orange
+  date: 2022-12-24
+  stative:
+    - be orange (color)
+  agentive:
+    - a fruit similar to an apple or pear which is orange
+sbg:
+  head: cow(ish)
+  date: 2022-12-24
+  instrument:
+    - cow
+    - note:
+        - a domesticated quadrupedal mammal native to the islands of Xanz which stands about 5 feet tall and feeds primarily on xytwel bushes
+xtw:
+  head: smell
+  date: 2022-12-24
+  passive:
+    - smell (perceive a scent)
+  causative:
+    - smell (produce a scent)
+    - participle:
+        - a type of bush, used both for fragrence and as food for somags
