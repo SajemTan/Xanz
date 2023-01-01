@@ -154,6 +154,7 @@
               ó: 'o',
               ú: 'u',
               ý: 'y',
+              éú: 'eu',
           };
           const nasal_cons = {
               p: 'mh',
@@ -184,7 +185,7 @@
           if (vow.test(pls[pls.length-1])) {
               vidx.push(pls.length-1);
           }
-          const unstress = /[ouyóúý]/;
+          const unstress = /^[eoyéóý]$/;
           let stress = [];
           let del = [];
           for (let i = 0; i < vidx.length; i++) {

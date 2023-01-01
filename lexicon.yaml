@@ -17,10 +17,9 @@ gsd:
     - make record of
   stative:
     - write a book
-  agentive:
-    - book # (not actually totally sure on this one)
-    - note:
-      - there's more than one nominalization pattern and I might decide later that "book" should be a different one
+  patient:
+    - date: 2022-12-27 # was originally agentive
+    - book
   instrument:
     - position
     - loc:
@@ -305,7 +304,7 @@ flth:
   date: 2020-12-22
   head: "3"
   stative:
-    - "4"
+    - "3"
 bgl:
   date: 2020-12-22
   head: "4"
@@ -965,3 +964,89 @@ xtw:
     - smell (produce a scent)
     - participle:
         - a type of bush, used both for fragrence and as food for somags
+wzt:
+  head: weave
+  date: 2022-12-26
+  active:
+    - weave
+    - interlace
+    - make fabric
+  stative:
+    - interlace fingers
+    - fold hands
+  agentive:
+    - weaver
+    - tailor
+    - seamstress
+  patient:
+    - cloth
+    - fabric
+  witnessive:
+    - watch someone weave
+    - cause an endeavor to fail by distracting the person doing it
+    - note:
+        - watching someone make cloth is considered very bad luck
+  passive:
+    - be woven
+    - note:
+        - commonly used as a metaphor for marriage
+    - participle:
+        - spouse
+wjt:
+  head: read
+  date: 2022-12-27
+  active:
+    - read
+  patient:
+    - book
+    - tablet
+    - note:
+        - often used to describe shorter texts, in contrast to gesyd
+dkl:
+  head: sphere
+  date: 2022-12-28
+  causative:
+    - form into a sphere
+    - roll (as of dough)
+  stative:
+    - roll (as of a ball)
+  witnessive:
+    - participle:
+      - a flat open space used for a game resembling soccer/football
+  agentive:
+    - sphere
+    - ball
+jos:
+  head: until
+  root: false
+  date: 2022-12-29
+gxt:
+  head: identify
+  date: 2022-12-31
+  active:
+    - identify
+    - specify
+    - refer to (by name)
+  instrument:
+    - name
+    - word
+  causative:
+    - give a name to
+    - participle:
+        - naming ceremony
+        - note:
+            - a ceremonial announcement of a new child's name, typically occurring 12 days after birth
+  passive:
+    - to have a name
+    - to be called
+    - note:
+        - takes a name as the direct object
+  stative:
+    - participle:
+        - roll
+        - attendance list
+gdp:
+  head: eulogize
+  date: 2022-12-31
+  perfective:
+    - mourn a death, particularly musically
