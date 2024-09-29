@@ -150,7 +150,7 @@ wlb:
     - participle:
       - song-hog
   note:
-    - Many Xanz celebrations and ritual observances involve standing in a circle and singing or chanting. The songs are frequently call and response and wálb refers to a person who is currently leading as opposed to someone whose job is leading songs. Most songs can be and often are led by anyone who knows all the words which results in nearly everyone leading at least occasionally. Someone who leads enough songs to make it hard for others to lead is called a walab. 
+    - Many Xanz celebrations and ritual observances involve standing in a circle and singing or chanting. The songs are frequently call and response and wálb refers to a person who is currently leading as opposed to someone whose job is leading songs. Most songs can be and often are led by anyone who knows all the words which results in nearly everyone leading at least occasionally. Someone who leads enough songs to make it hard for others to lead is called a walab.
 g'd:
   date: 2020-12-10
   head: sit
@@ -1050,3 +1050,49 @@ gdp:
   date: 2022-12-31
   perfective:
     - mourn a death, particularly musically
+pgs:
+  head: ???
+  date: 2024-09-29
+  instrument:
+    - leaf
+    - sheet of paper
+    - page
+ksl:
+  head: understand
+  date: 2024-09-29
+  instrument:
+    - eye
+  active:
+    - notice
+  intensive:
+    - understand
+dfl:
+  head: live
+  date: 2024-09-29
+  witnessive:
+    - write a biography
+  patient:
+    - life
+  active:
+    - live
+  stative:
+    - live
+tong:
+  head: when
+  date: 2024-09-29
+  root: false
+wgd:
+  head: graceful
+  date: 2024-09-29
+  intensive:
+    - dance
+  active:
+    - behave calmly, nobly, well
+xld:
+  head: point
+  date: 2024-09-29
+  causative:
+    - turn
+    - direct
+  active:
+    - point
