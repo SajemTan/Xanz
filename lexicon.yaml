@@ -244,6 +244,14 @@ bgth:
       - dinner table
       - note:
         - this is not used of a table holding maps, etc.
+  patient:
+    - date: 2024-12-01
+    - food
+    - bread
+    - loc:
+      - sandwich
+      - note:
+        - This can be used as a modifier, such as zasaxel begthen "meat in bread = a meat sandwich" or alone, as in begthen gybugíth "he is eating in bread = he is eating a sandwich", where it serves as an implicit direct object. To use it other cases, the non-elided form is required.
 dxd:
   date: 2020-12-19
   head: remember, remind
