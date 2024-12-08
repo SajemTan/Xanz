@@ -169,6 +169,9 @@ bdd:
   head: sleep
   passive:
     - sleep
+  middle:
+    - date: 2024-12-04
+    - nap
 sjd:
   date: 2020-12-12
   head: tangent? [see note]
@@ -225,6 +228,11 @@ bwd:
     - share a drink
     - go out for drinks
     - get coffee
+  intensive:
+    - date: 2024-12-03
+    - drink soup
+    - participle:
+      - soup
 tjw:
   date: 2020-12-17
   head: story
@@ -1104,3 +1112,33 @@ xld:
     - direct
   active:
     - point
+btk:
+  head: fix
+  date: 2024-12-02
+  active:
+    - correct
+    - improve
+    - fix
+txp:
+  head: forgive
+  date: 2024-12-05
+  intensive:
+    - forgive
+dgd:
+  head: excite
+  date: 2024-12-06
+  stative:
+    - be excited
+  causative:
+    - excite
+j'j:
+  head: tense
+  date: 2024-12-07
+  stative:
+    - be tense (physical)
+    - note:
+      - The metaphorical sense of "tense" in English would be expressed by saying that a situation "was being pulled".
+  causative:
+    - tense (a muscle)
+  instrument:
+    - massage tool
