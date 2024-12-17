@@ -79,6 +79,11 @@ kdd:
   active:
     - speak
     - say
+  intensive:
+    - date: 2024-12-16
+    - declare
+    - proclaim
+    - assert
 zbk:
   date: 2020-12-07
   head: flow
@@ -422,6 +427,10 @@ jps:
     - water
     - note:
       - jomhas is specifically water that is intended for cleaning, with or without soap.
+  middle:
+    - date: 2024-12-14
+    - bathe
+    - shower
 twt:
   date: 2020-12-29
   head: small
@@ -429,6 +438,10 @@ twt:
     - become small
   stative:
     - be small
+  causative:
+    - date: 2024-12-15
+    - condense
+    - summarize
 tbg:
   date: 2020-12-30
   head: laugh
@@ -444,6 +457,10 @@ kgj:
     - start
   stative:
     - be a beginner
+  intensive:
+    - date: 2024-12-10
+    - restart
+    - renew
 lbd:
   date: 2021-12-01
   head: stick, adhere
@@ -717,6 +734,10 @@ tthl:
   active:
     - disregard
     - ignore
+  intensive:
+    - date: 2024-12-09
+    - erase
+    - scrape off
 dbw:
   head: practice
   date: 2021-12-22
@@ -1018,6 +1039,10 @@ wjt:
     - tablet
     - note:
         - often used to describe shorter texts, in contrast to gesyd
+  instrument:
+    - date: 2024-12-12
+    - glasses
+    - spectacles
 dkl:
   head: sphere
   date: 2022-12-28
@@ -1142,3 +1167,33 @@ j'j:
     - tense (a muscle)
   instrument:
     - massage tool
+gtx:
+  head: yell
+  date: 2024-12-08
+  active:
+    - yell
+bgt:
+  head: smack
+  date: 2024-12-11
+  active:
+    - smack
+    - slap
+    - sharply rebuke
+  patient:
+    - bruise
+  intensive:
+    - punch
+    - slap hard enough to injure
+  instrument:
+    - fist
+fjj:
+  head: embrace
+  date: 2024-12-13
+  active:
+    - hug
+    - embrace
+    - welcome
+  intensive:
+    - snuggle
+  perfective:
+    - to be welcome
