@@ -177,6 +177,9 @@ bdd:
   middle:
     - date: 2024-12-04
     - nap
+  witnessive:
+    - date: 2024-12-21
+    - dream
 sjd:
   date: 2020-12-12
   head: tangent? [see note]
@@ -1197,3 +1200,39 @@ fjj:
     - snuggle
   perfective:
     - to be welcome
+  passive:
+    - date: 2024-12-20
+    - to visit
+txl:
+  head: divine
+  date: 2024-12-17
+  stative:
+    - be divine
+    - be a god
+    - participle:
+      - god
+      - nature spirit
+  witnessive:
+    - pay homage
+    - worship
+    - offer sacrifices to
+    - note:
+      - verb can be transitive or ditransitive
+  causative:
+    - deify
+  instrument:
+    - altar
+dll:
+  head: location
+  date: 2024-12-18
+  stative:
+    - be located
+  agentive:
+    - place
+    - note:
+      - with towards-genitive "place where _ happens", e.g. dálle anheuxéúli = temple
+  causative:
+    - date: 2024-12-19
+    - put
+    - set
+    - place
