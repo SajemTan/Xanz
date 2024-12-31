@@ -826,6 +826,9 @@ gld:
   passive:
     - be distracted
     - devote inordinate effort to endeavors of minor importance
+  intensive:
+    - date: 2024-12-23
+    - nerdsnipe
 xlz:
   head: complicate
   date: 2022-12-04
@@ -953,6 +956,12 @@ djj:
     - be late
     - be long
     - be delayed
+  causative:
+    - date: 2024-12-23
+    - delay
+    - cause to be late
+    - (reflexive) be distracted
+    - (reflexive) lose track of time
 je':
   head: necessary
   root: false
@@ -1236,3 +1245,68 @@ dll:
     - put
     - set
     - place
+wgk:
+  head: cold
+  date: 2024-12-24
+  stative:
+    - be cold
+  intensive:
+    - be frozen
+  instrument:
+    - ice
+  agentive:
+    - snow
+    - any frozen precipitation
+gkk:
+  head: bite
+  date: 2024-12-26
+  active:
+    - bite
+    - note:
+      - the subject is the teeth
+  agentive:
+    - tooth
+  passive:
+    - be bitten
+    - note:
+      - the individual doing the biting can be specified in the away-genitive, e.g. gygákek edíxi "he is being bitten from mine"
+wsl:
+  head: strange
+  date: 2024-12-26
+  stative:
+    - be strange
+    - be weird
+"'lb":
+  head: ascend
+  date: 2024-12-31
+  active:
+    - ascend
+    - go up
+  stative:
+    - rise, such as on water or air
+    - float upwards
+  intensive:
+    - jump
+snp:
+  head: wheel
+  date: 2024-12-31
+  patient:
+    - wheel
+  causative:
+    - roll (as on an axle)
+kzt:
+  head: flee
+  date: 2024-12-31
+  passive:
+    - depart
+    - leave
+  causative:
+    - flee
+    - run away
+fzl:
+  head: run
+  date: 2024-12-31
+  active:
+    - run
+    - SVC:
+      - hurry
