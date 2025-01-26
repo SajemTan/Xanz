@@ -34,10 +34,10 @@ ttd:
   patient:
     - leader
     - commander
+    - king
     - note:
       - borrowed into Sajem Tan as tetyt "king"
-  note:
-    - The people of Xanz live under a constitutional monarchy in which the primary role of the monarch is to be knowledgeable about organizational structures and to coordinate communication between the various governmental bodies. The monarch does have some direct power, though in recent times it is rarely used.
+      - The people of Xanz live under a constitutional monarchy in which the primary role of the monarch is to be knowledgeable about organizational structures and to coordinate communication between the various guilds and the handful of governmental bodies. The monarch does have some direct power, though in recent times it is rarely used.
 kbp:
   date: 2020-12-04
   head: confuse
@@ -274,6 +274,9 @@ dxd:
   agentive:
     - a memory
     - something that triggers a memory
+    - participle:
+      - date: 2025-01-26
+      - something memorable
   active:
     - remind
   passive:
@@ -441,6 +444,9 @@ twt:
     - become small
   stative:
     - be small
+    - SVC:
+      - date: 2025-01-26
+      - rarely
   causative:
     - date: 2024-12-15
     - condense
@@ -558,6 +564,10 @@ llf:
   date: 2021-10-31
   active:
     - be large
+    - SVC:
+      - date: 2025-01-26
+      - often
+      - frequently
 tdl:
   head: heavy
   date: 2021-10-31
@@ -570,6 +580,13 @@ bsl:
   date: 2021-10-31
   patient:
     - rock
+  agentive:
+    - mason
+    - date: 2025-01-11
+  witnessive:
+    - participle:
+      - guild
+      - date: 2025-01-11
 dlb:
   head: dirt
   date: 2021-10-31
@@ -789,7 +806,10 @@ tkg:
     - participle:
       - threshold
   stative:
+    - date: 2021-12-30
     - be indoors
+    - date: 2025-01-26
+    - be inside
 tthp:
   head: day
   date: 2021-12-30
@@ -1310,3 +1330,57 @@ fzl:
     - run
     - SVC:
       - hurry
+kfb:
+  head: eat ants
+  date: 2025-01-11
+  perfective:
+    - eat ants
+    - participle:
+      - pangolin
+      - note:
+        - borrowed from the Sajem Tan kevuhm
+  patient:
+    - ant
+si:
+  head: relative clause
+  date: 2025-01-19
+  root: false
+dlp:
+  head: sound
+  date: 2025-01-19
+  patient:
+    - sound
+    - noise
+  intensive:
+    - thunderclap
+ktg:
+  head: useful
+  date: 2025-01-19
+  stative:
+    - be useful
+    - be productive
+    - SVC:
+      - well
+gdl:
+  head: comparative
+  date: 2025-01-19
+  active:
+    - SVC:
+      - comparative
+  intensive:
+    - SVC:
+      - superlative
+jan:
+  root: false
+  date: 2025-01-26
+  head: inanimate demonstrative
+  nom:
+    - form: jan
+  nom-away:
+    - form: éjan
+dzp:
+  head: scale
+  date: 2025-01-26
+  instrument:
+    - scale
+    - shell
