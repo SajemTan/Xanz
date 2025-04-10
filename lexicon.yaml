@@ -139,6 +139,11 @@ fthb:
     - (of another) tell an exaggerated or fanciful story
   active:
     - sail a boat
+    - S3IO3:
+      - pass (of time)
+      - date: 2025-04-08
+      - note:
+        - generally appears with elided subject
 wlb:
   date: 2020-12-09
   head: sing
@@ -156,6 +161,9 @@ wlb:
       - song-hog
   note:
     - Many Xanz celebrations and ritual observances involve standing in a circle and singing or chanting. The songs are frequently call and response and wálb refers to a person who is currently leading as opposed to someone whose job is leading songs. Most songs can be and often are led by anyone who knows all the words which results in nearly everyone leading at least occasionally. Someone who leads enough songs to make it hard for others to lead is called a walab.
+  instrument:
+    - song
+    - date: 2025-04-07
 g'd:
   date: 2020-12-10
   head: sit
@@ -327,6 +335,10 @@ tgth:
       - away-nom:
         - date: 2021-12-30
         - again
+  stative:
+    - participle:
+      - date: 2025-04-07
+      - year
 flth:
   date: 2020-12-22
   head: "3"
@@ -380,8 +392,8 @@ pds:
     - commemorate
   intensive:
     - celebrate the harvest or creation festivals
-  note:
-    - For both of these verbs, the participle uses typically refer to the celebration rather than the people celebrating. The intensive form refers specifically to the Padasi Tegyth, the 2 great festivals of the Xanz calendar. The first is the autumn harvest festival, the end of which marks the beginning of the new year. The other is in the late spring and commemorates the day on which the world is held to have been created by the Walab and Dadal of the World Beyond.
+    - note:
+      - For both of the active and the intensive, the participle uses typically refer to the celebration rather than the people celebrating. The intensive form refers specifically to the Padasi Tegyth, the 2 great festivals of the Xanz calendar. The first is the autumn harvest festival, the end of which marks the beginning of the new year. The other is in the late spring and commemorates the day on which the world is held to have been created by the Walab and Dadal of the World Beyond.
 gxth:
   date: 2020-12-25
   head: count
@@ -1260,6 +1272,11 @@ dll:
     - place
     - note:
       - with towards-genitive "place where _ happens", e.g. dálle anheuxéúli = temple
+    - loc:
+      - ordinal
+      - date: 2025-04-08
+      - note:
+        - appears with genitive numeral, e.g. "bagili dállen" = "second"
   causative:
     - date: 2024-12-19
     - put
@@ -1384,3 +1401,36 @@ dzp:
   instrument:
     - scale
     - shell
+djp:
+  head: heal
+  date: 2025-04-08
+  causative:
+    - heal
+    - care for
+  active:
+    - heal
+    - recover
+gdk:
+  head: face
+  date: 2025-04-08
+  instrument:
+    - face
+zjz:
+  head: feel
+  date: 2025-04-08
+  passive:
+    - experience emotion
+  intensive:
+    - be in turmoil or passion
+ltk:
+  head: child
+  date: 2025-04-08
+  patient:
+    - child
+  stative:
+    - participle:
+      - childhood
+jal:
+  root: false
+  date: 2025-04-08
+  head: before, ago
