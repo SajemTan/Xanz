@@ -1,0 +1,38 @@
+PATTERNS
+Noun
+VerbStem
+
+PATTERN VerbStem
+Root(1):Root(4) VerbVowels(1): Root(2): VerbVowels(2): Root(3): [:<v>] :VerbVowels(3)
+
+LEXICON VerbVowels(3)
+a a <ints>
+á e <pass>
+a i <hab>
+e á <perf>
+{eu} {eu} <mid>
+{eu} {eu'} <wit>
+u í <act>
+y o <caus>
+
+PATTERN Noun
+PrefixCases: NounStem SuffixCases :PrefixCases
+
+PATTERN NounStem
+Root(1):Root(4) NounVowels(1): Root(2): NounVowels(2): Root(3): [:<n>] NounVowels(3):NounVowels(4)
+VerbStem [el:<part>]
+
+LEXICON NounVowels(4)
+á : {e?} <agt>
+e y : <pat>
+ó a : <ins>
+
+LEXICON PrefixCases
+:
+e:<away>
+á:<toward>
+
+LEXICON SuffixCases
+:<nom>
+i:<gen>
+éd:<loc>

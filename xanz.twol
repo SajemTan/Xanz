@@ -1,0 +1,50 @@
+Alphabet
+p p:%{mh%} b b:m t t:%{nh%} d d:n s s:%{ñh%} z z:ñ k g g:%{ng%} %'
+f %{th%} x w l j
+i y u e o a
+í ý ú é ó á
+í:i ý:y ú:u é:e ó:o á:a
+%{eu%} %{eu%'%} %{eu%'%}:%{eu%}
+%{iu%} %{iu%'%} %{iu%'%}:%{iu%}
+%{e%?%}:e %{e%?%}:0
+y:0 e:0 o:0
+ý:0 é:0 ó:0
+;
+
+Sets
+
+Nasalable = p      b t      d s      z g ;
+Nasalized = %{mh%} m %{nh%} n %{ñh%} ñ %{ng%} ;
+Nasal    = í ý ú é ó á %{eu%'%} %{iu%'%} ;
+NonNasal = i y u e o a %{eu%}   %{iu%} ;
+OtherCons = f %{th%} x w l j ;
+
+Definitions
+
+C = Nasalable: | OtherCons ;
+V = Nasal: | NonNasal: ;
+Onset = ( C ) ( %{e%?%}:0 ) ;
+Syl = Onset V ;
+
+Rules
+
+"nasal cons"
+Cx:Cy <=> Nasal: _ ;
+  where Cx in Nasalable
+        Cy in Nasalized
+  matched ;
+
+
+"nasal vowel"
+Vx:Vy <=> _ Nasalable: ;
+  where Vx in Nasal
+        Vy in NonNasal
+  matched ;
+
+"optional e"
+%{e%?%}:0 <=> _ [ Nasal: | NonNasal: ] ;
+
+! TODO: nasalized conflicts with nasal vowel rule
+"weak vowels"
+Vx:0 <=> .#. [ Syl Syl ]+ Syl Onset _ Syl ;
+  where Vx in ( y e o ) ;

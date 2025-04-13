@@ -2,6 +2,7 @@
 
 import yaml
 import json
+import re
 
 class Word:
     def __init__(self):
@@ -73,3 +74,17 @@ with open('lexicon.yaml') as fin:
     with open('lexicon.js', 'w') as fout:
         s = json.dumps(js, sort_keys=True)
         fout.write(f'var lexicon = {s};\n')
+
+    gloss_re = re.compile(r'\s*[,\(\)\[\]].*')
+    def clean(s):
+        return gloss_re.sub('', s).replace(' ', '.')
+    with open('lexicon.lexd', 'w') as fout:
+        print('LEXICON Root(4)', file=fout)
+        for w in js['root']:
+            print(' '.join(w['root']).replace('th', '{th}'),
+                  clean(w['gloss']), file=fout)
+        print('', file=fout)
+        print('LEXICON Particle', file=fout)
+        for w in js['non_root']:
+            print(w['stem'].replace('th', '{th}') + ':' + clean(w['gloss']),
+                  file=fout)
