@@ -1,6 +1,15 @@
 PATTERNS
-Noun
-VerbStem
+Noun Clitics?
+Verb Clitics?
+Pronoun
+Particle [:<part>]
+
+LEXICON Clitics
+ek:+and<conj>
+
+PATTERN Verb
+Agreement VerbStem
+VerbStem [á:<imp>]
 
 PATTERN VerbStem
 Root(1):Root(4) VerbVowels(1): Root(2): VerbVowels(2): Root(3): [:<v>] :VerbVowels(3)
@@ -15,8 +24,33 @@ e á <perf>
 u í <act>
 y o <caus>
 
+PATTERN Agreement
+Person Tense
+IrregPersonTense
+
+LEXICON Person
+áda:<s1o2>
+iza:<s2o1>
+ise:<s2o3>
+le:<s3io3>
+ká:<svc>
+
+LEXICON Tense
+:
+ji:<pst>
+ti:<fut>
+wa:<pos>
+zú:<des>
+
+LEXICON IrregPersonTense
+á{th}i:<s1o3>
+á{th}ji:<s1o3><pst>
+á{th}idi:<s1o3><fut>
+gy:<s3ao3>
+gi:<s3ao3><pst>
+
 PATTERN Noun
-PrefixCases: NounStem SuffixCases :PrefixCases
+PrefixCases NounStem SuffixCases
 
 PATTERN NounStem
 Root(1):Root(4) NounVowels(1): Root(2): NounVowels(2): Root(3): [:<n>] NounVowels(3):NounVowels(4)
@@ -36,3 +70,12 @@ LEXICON SuffixCases
 :<nom>
 i:<gen>
 éd:<loc>
+
+PATTERN Pronoun
+[:p1<prn>] Pronouns(2):Pronouns(1)
+[:p3i<prn>] Pronouns(3):Pronouns(1)
+
+LEXICON Pronouns(3)
+<nom>       di   xow
+<nom><away> édi  exow
+<gen>       díxi xwi

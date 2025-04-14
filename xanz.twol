@@ -9,6 +9,7 @@ i y u e o a
 %{e%?%}:e %{e%?%}:0
 y:0 e:0 o:0
 ý:0 é:0 ó:0
+%{mh%} m %{nh%} n %{ñh%} ñ %{ng%}
 ;
 
 Sets
@@ -17,13 +18,12 @@ Nasalable = p      b t      d s      z g ;
 Nasalized = %{mh%} m %{nh%} n %{ñh%} ñ %{ng%} ;
 Nasal    = í ý ú é ó á %{eu%'%} %{iu%'%} ;
 NonNasal = i y u e o a %{eu%}   %{iu%} ;
-OtherCons = f %{th%} x w l j ;
+OtherCons = f %{th%} x w l j %{mh%} m %{nh%} n %{ñh%} ñ %{ng%} ;
 
 Definitions
 
-C = Nasalable: | OtherCons ;
 V = Nasal: | NonNasal: ;
-Onset = ( C ) ( %{e%?%}:0 ) ;
+Onset = ( ? - V )* ;
 Syl = Onset V ;
 
 Rules
@@ -42,9 +42,10 @@ Vx:Vy <=> _ Nasalable: ;
   matched ;
 
 "optional e"
-%{e%?%}:0 <=> _ [ Nasal: | NonNasal: ] ;
+%{e%?%}:0 <=> _ V ;
 
 ! TODO: nasalized conflicts with nasal vowel rule
 "weak vowels"
 Vx:0 <=> .#. [ Syl Syl ]+ Syl Onset _ Syl ;
+         .#. Syl Onset _ Syl ;
   where Vx in ( y e o ) ;

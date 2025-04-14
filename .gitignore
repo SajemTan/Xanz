@@ -1,4 +1,5 @@
 *.hfst
 *.att
+*.hfstol
 lexicon.lexd
 xanz.lexd

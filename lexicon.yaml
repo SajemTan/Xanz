@@ -1434,3 +1434,25 @@ jal:
   root: false
   date: 2025-04-08
   head: before, ago
+sit:
+  root: false
+  date: 2025-04-13
+  head: third person animate
+  nom:
+    - form: sit
+  nom-away:
+    - form: esi
+  nom-to:
+    - form: añhi
+  gen:
+    - form: síxi
+  gen-away:
+    - form: esíxi
+  gen-to:
+    - form: añhíxi
+  loc:
+    - form: se'en
+  loc-away:
+    - form: es'en
+  loc-to:
+    - form: añh'en

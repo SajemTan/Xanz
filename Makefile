@@ -1,4 +1,10 @@
-all: xanz.hfst
+all: xanz.hfstol xanz_gen.hfstol
+
+xanz_gen.hfstol: xanz.hfst
+	hfst-invert $< | hfst-fst2fst -O > $@
+
+xanz.hfstol: xanz.hfst
+	hfst-fst2fst -O $< > $@
 
 xanz.hfst: morph.hfst phon.hfst spell.hfst
 	hfst-invert morph.hfst | hfst-compose-intersect -1 - -2 phon.hfst | hfst-compose -1 - -2 spell.hfst | hfst-invert > $@
