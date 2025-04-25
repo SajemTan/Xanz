@@ -107,6 +107,8 @@ xtd:
     - to draw in
     - note:
       - ST xëtët "turtle"
+    - note:
+      - Among the Xanz islands, the 2 that have cliffs also have significant amounts of magnetic material in the sediment of the sea floor around them. Various fish ingest these magnets and then are hunted by xeuteud turtles which swallow larger magnets in order to pull the fish towards them. This is rarely sufficient to catch the fish, though the magnetism is often strong enough to noticeably hinder their escape.
   stative:
     - to be beautiful
   witnessive:
@@ -119,8 +121,6 @@ xtd:
       - ST xatat "magnet"
   patient:
     - an admirer
-  note:
-    - Among the Xanz islands, the 2 that have cliffs also have significant amounts of magnetic material in the sediment of the sea floor around them. Various fish ingest these magnets and then are hunted by xeuteud turtles which swallow larger magnets in order to pull the fish towards them. This is rarely sufficient to catch the fish, though the magnetism is often strong enough to noticeably hinder their escape.
 fthb:
   date: 2020-12-08
   head: sail

@@ -34,9 +34,9 @@ Cx:Cy <=> Nasal: _ ;
         Cy in Nasalized
   matched ;
 
-
 "nasal vowel"
-Vx:Vy <=> _ Nasalable: ;
+Vx:Vy /<= _ ;
+  except _ Nasalable: ;
   where Vx in Nasal
         Vy in NonNasal
   matched ;
@@ -44,8 +44,7 @@ Vx:Vy <=> _ Nasalable: ;
 "optional e"
 %{e%?%}:0 <=> _ V ;
 
-! TODO: nasalized conflicts with nasal vowel rule
 "weak vowels"
 Vx:0 <=> .#. [ Syl Syl ]+ Syl Onset _ Syl ;
          .#. Syl Onset _ Syl ;
-  where Vx in ( y e o ) ;
+  where Vx in ( y ý e é o ó ) ;
