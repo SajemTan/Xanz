@@ -1456,3 +1456,18 @@ sit:
     - form: es'en
   loc-to:
     - form: añh'en
+kal:
+  root: false
+  date: 2025-04-27
+  head: proximal demonstrative
+  nom:
+    - form: kal
+  loc:
+    - form: kalen
+    - now
+  loc-away:
+    - form: ekalen
+    - from now on
+  loc-to:
+    - form: ákalen
+    - until now
