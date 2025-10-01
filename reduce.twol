@@ -1,0 +1,26 @@
+Alphabet
+p %{mh%} b m t %{nh%} d n s %{ñh%} z ñ k g %{ng%} %'
+f %{th%} x w l j
+i y u e o a
+í ý ú é ó á
+%{eu%} %{eu%'%}
+y:0 e:0 o:0
+ý:0 é:0 ó:0
+;
+
+Sets
+
+V = í ý ú é ó á %{eu%'%}
+    i y u e o a %{eu%}   ;
+
+Definitions
+
+Onset = ( ? - V )* ;
+Syl = Onset V ;
+
+Rules
+
+"weak vowels"
+Vx:0 <=> .#. [ Syl Syl ]+ Syl Onset _ Syl ;
+         .#. Syl Onset _ Syl ;
+  where Vx in ( y ý e é o ó ) ;
