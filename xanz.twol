@@ -31,5 +31,9 @@ Vx:Vy /<= _ ;
         Vy in NonNasal
   matched ;
 
+"nasal vowel 2"
+Vx:Vx /<= _ Nasalable: ;
+  where Vx in Nasal ;
+
 "optional e"
 %{e%?%}:0 <=> _ [ Nasal: | NonNasal: ] ;
