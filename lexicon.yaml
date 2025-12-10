@@ -188,6 +188,9 @@ bdd:
   witnessive:
     - date: 2024-12-21
     - dream
+  perfective:
+    - date: 2025-11-22
+    - fall asleep
 sjd:
   date: 2020-12-12
   head: tangent? [see note]
@@ -219,8 +222,8 @@ thfb:
   head: finish
   perfective:
     - to have finished
-  note:
-    - The other verbal forms have the expected meanings, though the active voice is relatively rare in comparison to the perfective.
+    - note:
+      - The other verbal forms have the expected meanings, though the active voice is relatively rare in comparison to the perfective.
   patient:
     - totality
     - entirety
@@ -604,6 +607,12 @@ dlb:
   date: 2021-10-31
   agentive:
     - dirt
+  active:
+    - date: 2025-12-09
+    - dig
+    - shovel
+  instrument:
+    - shovel
 zsx:
   head: meat
   date: 2021-10-31
@@ -1471,3 +1480,113 @@ kal:
   loc-to:
     - form: ákalen
     - until now
+fin:
+  root: false
+  date: 2025-11-24
+  head: on behalf of
+pkl:
+  date: 2025-12-01
+  head: press
+  active:
+    - press
+    - inscribe
+    - write
+  instrument:
+    - reed
+    - pen
+  causative:
+    - dictate
+"kj'":
+  date: 2025-12-02
+  head: clay
+  agentive:
+    - clay
+  causative:
+    - mold
+    - shape
+    - form
+    - sculpt
+  instrument:
+    - potter's wheel
+sjk:
+  date: 2025-12-03
+  head: bake
+  active:
+    - bake
+    - fire in a kiln
+  instrument:
+    - kiln
+    - oven
+bkd:
+  date: 2025-12-04
+  head: surface
+  patient:
+    - surface
+    - loc:
+      - 'on'
+      - on top of
+  instrument:
+    - work table
+  causative:
+    - put
+    - place
+    - stack
+zdk:
+  date: 2025-12-05
+  head: lock
+  agentive:
+    - key
+  instrument:
+    - lock
+    - seal
+    - drawstring
+  active:
+    - close
+    - seal
+    - note:
+      - to be "sealed into dirt" (dálben zudík) is to be buried
+  witnessive:
+    - attend a funeral
+tgb:
+  date: 2025-12-06
+  head: carry
+  patient:
+    - load
+    - burden
+  causative:
+    - manage
+    - organize workers
+    - participle:
+      - foreman
+  stative:
+    - trudge
+  active:
+    - carry
+    - bear
+  instrument:
+    - backpack
+    - stretcher
+ktk:
+  date: 2025-12-07
+  head: reflect
+  instrument:
+    - pool
+    - mirror
+    - reflective surface
+  stative:
+    - reflect
+    - mirror
+  patient:
+    - repeated pattern
+    - poetic form marked by repetitions of a single root with different meanings, particularly as a form of rhyme
+dsl:
+  date: 2025-12-08
+  head: worry
+  stative:
+    - worry
+    - be concerned about
+  intensive:
+    - be sick with worry
+  patient:
+    - issue
+    - concern
