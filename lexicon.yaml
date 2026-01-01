@@ -550,6 +550,9 @@ xow:
   gen:
     - form: xwi
     - date: 2021-10-31
+  nom-to:
+    - form: áxow
+    - date: 2025-12-22
 ffd:
   date: 2021-12-04
   head: dry
@@ -1285,7 +1288,7 @@ dll:
       - ordinal
       - date: 2025-04-08
       - note:
-        - appears with genitive numeral, e.g. "bagili dállen" = "second"
+        - appears with genitive numeral, e.g. "dállen bagili" = "second"
   causative:
     - date: 2024-12-19
     - put
@@ -1480,6 +1483,9 @@ kal:
   loc-to:
     - form: ákalen
     - until now
+  gen:
+    - date: 2025-12-30
+    - form: kali
 fin:
   root: false
   date: 2025-11-24
@@ -1590,3 +1596,263 @@ dsl:
   patient:
     - issue
     - concern
+sxd:
+  date: 2025-12-10
+  head: empty
+  stative:
+    - be empty
+    - be blank
+  causative:
+    - empty
+    - clear
+    - erase
+  witnessive:
+    - stare blankly
+    - stare off into space
+  instrument:
+    - flat stone used to erase clay tablets
+    - any tool used to empty a container (e.g. bucket, shovel)
+zps:
+  date: 2025-12-11
+  head: ocean
+  agentive:
+    - salt water
+  intensive:
+    - participle:
+      - the ocean
+  stative:
+    - change the tide
+    - note:
+      - anhañeblen zapis = tide going out (down), á'ulimlen zapis = tide coming in (up)
+glt:
+  date: 2025-12-12
+  head: head
+  patient:
+    - head
+    - pinnacle
+    - top
+    - end
+    - loc-to:
+      - later
+      - note:
+        - time is generally conceived of as a tree growing upwards, so the root is the beginning and the top is the end
+  instrument:
+    - hat
+    - helmet
+    - crown
+    - headgear
+jkl:
+  date: 2025-12-13
+  head: expect
+  instrument:
+    - expectation
+    - prediction
+  patient:
+    - thing expected
+  active:
+    - predict
+    - guess
+  perfective:
+    - expect
+  intensive:
+    - prophesy
+    - foretell the future
+flk:
+  date: 2025-12-14
+  head: trust
+  active:
+    - trust
+    - rely on
+    - believe
+  intensive:
+    - swear fealty to
+  instrument:
+    - trust
+  patient:
+    - belief
+  passive:
+    - be trustworthy
+bsj:
+  date: 2025-12-15
+  head: foundation
+  agentive:
+    - foundation stone
+  stative:
+    - serve as the foundation of something
+  causative:
+    - lay a foundation
+"'lf":
+  date: 2025-12-16
+  head: chaos
+  stative:
+    - be in chaos
+  passive:
+    - descend into chaos
+  active:
+    - descend into chaos (intentionally)
+fwx:
+  date: 2025-12-17
+  head: sharp
+  stative:
+    - be sharp
+  causative:
+    - sharpen
+  agentive:
+    - knife
+    - dagger
+  perfective:
+    - cut
+    - slice
+  patient:
+    - cut
+    - incision
+  instrument:
+    - whetstone
+kjz:
+  date: 2025-12-18
+  head: plan
+  active:
+    - plan
+    - design
+    - outline
+    - note:
+      - particularly plans for actions or immaterial things contrasts with kyjo' (shaping physical objects)
+      - can also contrast in that kujiñ is planning future projects while kyjo' is actively implementing them
+  instrument:
+    - design
+    - intention
+  patient:
+    - goal
+    - date: 2025-12-25
+fgl:
+  date: 2025-12-19
+  head: fly
+  agentive:
+    - bird
+  active:
+    - fly
+dlg:
+  date: 2025-12-20
+  head: hair
+  patient:
+    - hair
+glx:
+  date: 2025-12-21
+  head: deprive
+  agentive:
+    - hole
+    - deprivation
+    - gap
+    - lacuna
+  active:
+    - deprive
+    - remove
+    - take away
+  patient:
+    - missing piece
+tpk:
+  date: 2025-12-22
+  head: remain
+  agentive:
+    - remains
+    - leftovers
+  active:
+    - remain
+    - stay
+    - abide
+  causative:
+    - keep
+    - retain
+fdl:
+  date: 2025-12-23
+  head: oppose
+  agentive:
+    - opponent
+  active:
+    - oppose
+  intensive:
+    - participle:
+      - enemy
+  instrument:
+    - contest
+    - match
+    - game
+    - note:
+      - this is usually too strong of a word for something like a card game, but it does sometimes apply
+  perfective:
+    - date: 2025-12-26
+    - defeat
+flf:
+  date: 2025-12-24
+  head: deep
+  stative:
+    - be deep
+    - be underground
+sef:
+  date: 2025-12-25
+  head: none, no
+  root: false
+gal:
+  date: 2025-12-26
+  head: emphatic adverb (indeed, even)
+  root: false
+pang:
+  date: 2025-12-26
+  head: agentive preposition (e.g. in passives)
+  root: false
+ftg:
+  date: 2025-12-26
+  head: experience
+  stative:
+    - experience
+    - undergo
+  witnessive:
+    - consider
+    - contemplate
+  agentive:
+    - experience
+tsk:
+  date: 2025-12-26
+  head: clear
+  stative:
+    - be clear
+    - be definite
+    - be certain
+  causative:
+    - clarify
+flx:
+  date: 2025-12-27
+  head: happy
+  stative:
+    - be happy
+  instrument:
+    - happiness
+    - joy
+sbd:
+  date: 2025-12-28
+  head: suffer
+  active:
+    - suffer
+    - allow/permit something negative
+gthp:
+  date: 2025-12-29
+  head: good
+  stative:
+    - be good
+  active:
+    - do something well
+klb:
+  date: 2025-12-30
+  head: world
+  instrument:
+    - world
+    - universe
+thbth:
+  date: 2025-12-31
+  head: hope
+  instrument:
+    - hope
+  active:
+    - hope for something
+    - SVC:
+      - hopefully
