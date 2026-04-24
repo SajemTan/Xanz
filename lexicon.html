@@ -3,31 +3,39 @@
   <head>
     <title>Xanz Lexicon</title>
     <script type="text/javascript" src="lexicon.js"></script>
+    <script type="text/javascript" src="lex-search.js"></script>
     <meta charset="UTF-8" />
     <style>
       .conjugation > .conjugation {
           padding-left: 20px;
       }
+      #thetable {
+          margin-top: 100px;
+      }
+      #controls {
+          width: 100%;
+          background-color: rgba(255, 255, 255, 0.9);
+          position: fixed;
+          left: 0px;
+          top: 0px;
+          padding: 15px;
+      }
     </style>
   </head>
-  <body onload="doSearch();">
-    <div style="width: 100%; background-color: rgba(255, 255, 255, 0.9); position: fixed; left: 0px; top: 0px; padding: 15px;">
+  <body onload="setup(); doSearch();">
+    <div id="controls">
       <span>Search</span>
       <select id="searchwhat" onchange="doSearch();">
-        <option value="all">Everything</option>
-        <option value="root">Roots</option>
-        <option value="def">Definitions</options>
+        <option value="1">Everything</option>
+        <option value="2">Roots</option>
+        <option value="3">Definitions</options>
       </select>
       <span>for</span>
       <input type="text" id="search" onkeyup="doSearch();"></input>
       <label for="regex">Regex? </label>
       <input type="checkbox" id="regex" onclick="doSearch();"></input>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <table border="1">
+    <table border="1" id="thetable">
       <thead>
         <tr>
           <th>Root</th>
@@ -37,363 +45,5 @@
       <tbody id="defs"></tbody>
     </table>
     <p id="matches"></p>
-    <script>
-      var search_all = [];
-      var search_root = [];
-      var search_defs = [];
-      var search_nodes = [];
-      var lexicon_flat_arr = lexicon.root.concat(lexicon.non_root);
-      var searchMatch = function(txt, queryString, isRegex) {
-        function decodeHtml(html) {
-          var txt = document.createElement("textarea");
-          txt.innerHTML = html;
-          return txt.value;
-        }
-        var str = decodeHtml(txt);
-        var find = decodeHtml(queryString);
-        if (!isRegex) {
-          return str.toLowerCase().includes(find.toLowerCase());
-        } else {
-          return str.match(queryString) != null;
-        }
-      };
-      var doSearch = function() {
-        var searchstr = document.getElementById("search").value;
-        var isRegex = document.getElementById("regex").checked;
-        var l = search_nodes;
-        var srch;
-        var mode = document.getElementById('searchwhat').value;
-        if (mode == 'all') {
-          srch = search_all;
-        } else if (mode == 'root') {
-          srch = search_root;
-        } else if (mode == 'def') {
-          srch = search_defs;
-        }
-        var matches = 0
-        for (var i = 0; i < l.length; i++) {
-          l[i].style.display = searchMatch(srch[i], searchstr, isRegex) ? "" : "none";
-          if (l[i].style.display == "") { matches++; }
-        }
-        document.getElementById("matches").innerHTML = matches + " matches for " + searchstr;
-      };
-      var setSearch = function(str) {
-        document.getElementById("search").value = str;
-        doSearch();
-      }
-      var makeLink = function(word, update) {
-        return "<a href=\"#\" onclick=\"setSearch('" + word + "')\">" + word + "</a>";
-      };
-      var mkel = function(tag, html) {
-        var ret = document.createElement(tag);
-        ret.innerHTML = html;
-        return ret;
-      };
-      var conjugate = function(prev, mode) {
-          let pmode = prev[prev.length-1][0];
-          let pform = prev[prev.length-1][1];
-          const patterns = {
-              agentive: ['á', '', 'e'],
-              intensive: ['a', 'a', ''],
-              passive: ['á', 'e', ''],
-              stative: ['a', 'i', ''],
-              perfective: ['e', 'á', ''],
-              patient: ['e', 'y', ''],
-              middle: ['eu', 'eu', ''],
-              witnessive: ['eu', 'éú', ''],
-              instrument: ['ó', 'a', ''],
-              active: ['u', 'í', ''],
-              causative: ['y', 'o', '']
-          };
-          const verb_pref = {
-              S1O2: 'ana',
-              S1O3: 'áthi',
-              S3IO3: 'le',
-              SVC: 'ká',
-          };
-          const noun_affix = {
-              nom: ['', ''],
-              'nom-away': ['e', ''],
-              'nom-to': ['á', ''],
-              gen: ['', 'i'],
-              'gen-away': ['e', 'i'],
-              'gen-to': ['á', 'i'],
-              loc: ['', 'en'],
-              'loc-away': ['e', 'en'],
-              'loc-to': ['á', 'en'],
-              // TODO: standardize in some direction
-              'away-nom': ['e', ''],
-              'vocative': ['á', ''],
-          };
-          if (patterns.hasOwnProperty(mode)) {
-              let v = patterns[mode];
-              let c = pform;
-              return c[0] + v[0] + c[1] + v[1] + c[2] + v[2];
-          } else if (mode == 'participle') {
-              return pform + 'el';
-          } else if (verb_pref.hasOwnProperty(mode)) {
-              return verb_pref[mode] + pform;
-          } else if (noun_affix.hasOwnProperty(mode)) {
-              let na = noun_affix[mode];
-              return na[0] + pform + na[1];
-          } else if (mode == 'none') {
-              return pform;
-          }
-          console.log(['TODO', pform, mode]);
-          if (typeof pform == "string") {
-              return pform + '-' + mode;
-          } else {
-              console.log(pform);
-              return pform.join('_');
-          }
-      };
-      var phono = function(ur) {
-          const ph = /[mnñt]h|ng|[ie]u|[íé]ú|[pbtdszkg\'mnñfxwlj]|[aeiouyáéíóúý]/g;
-          let pls = ur.match(ph);
-          const nasal_vow = {
-              á: 'a',
-              é: 'e',
-              í: 'i',
-              ó: 'o',
-              ú: 'u',
-              ý: 'y',
-              éú: 'eu',
-          };
-          const nasal_cons = {
-              p: 'mh',
-              b: 'm',
-              t: 'nh',
-              d: 'n',
-              s: 'ñh',
-              z: 'ñ',
-              g: 'ng',
-          };
-          const vow = /[ie]u|[íé]ú|[aeiouyáéíóúý]/;
-          let vidx = [];
-          let denas = [];
-          for (let i = 0; i < pls.length-1; i++) {
-              let v = pls[i];
-              if (vow.test(v)) {
-                  vidx.push(i);
-              } else {
-                  continue;
-              }
-              let c = pls[i+1];
-              if (nasal_vow.hasOwnProperty(v) && nasal_cons.hasOwnProperty(c)) {
-                  denas.push(i);
-                  pls[i+1] = nasal_cons[c];
-                  i++;
-              }
-          }
-          if (vow.test(pls[pls.length-1])) {
-              vidx.push(pls.length-1);
-          }
-          const unstress = /^[eoyéóý]$/;
-          let stress = [];
-          let del = [];
-          for (let i = 0; i < vidx.length; i++) {
-              if (i % 2 == 0) {
-                  stress.push(vidx[i]);
-              } else if (unstress.test(pls[vidx[i]])) {
-                  del.push(vidx[i]);
-              }
-          }
-          if (del.length && del[del.length-1] > stress[stress.length-1]) {
-              del.pop();
-          }
-        const ipa = {
-          p: 'p',
-          mh: 'm̥',
-          b: 'b',
-          m: 'm',
-	        t: 't',
-          nh: 'n̥',
-          d: 'd',
-          n: 'n',
-	        s: 's',
-          ñh: 'ɲ̊',
-          z: 'ʤ',
-          ñ: 'ɲ',
-	        k: 'k',
-          g: 'g',
-          ng: 'ŋ',
-	        "'": 'ʔ',
-          f: 'f',
-	        th: 'θ',
-		      x: 'x',
-          w: 'w',
-	        l: 'l',
-	        j: 'j',
-	        i: 'i',
-	        y: 'ɨ',
-          u: 'u',
-          e: 'ɛ',
-		      o: 'ɔ',
-          a: 'a',
-          í: 'ĩ',
-          á: 'ã',
-          ó: 'ɔ̃',
-          é: 'ɛ̃',
-          ú: 'ũ',
-          ý: 'ɨ̃',
-          eu: 'ɛu',
-          iu: 'iu',
-          éú: 'ɛ̃ũ',
-          íú: 'ĩũ',
-        };
-        const cuneiform = {
-          p: ['𒁁', '𒁇', '𒄕', '𒋾', '𒉒'],
-          mh: ['𒁁', '𒁇', '𒄕', '𒋾', '𒉒'],
-          b: ['𒉼', '𒁇', '𒃲', '𒁴', '𒁷'],
-          m: ['𒉿', '𒂟', '𒑗', '𒀽', '𒀽'],
-          t: ['𒀺', '𒅎', '𒁑', '𒅆', '𒅆'],
-          nh: ['𒀺', '𒅎', '𒁑', '𒅆', '𒅆'],
-          d: ['𒆸', '𒅂', '𒁑', '𒄑', '𒅆'],
-          n: ['𒍭', '𒁑', '𒁑', '𒀭', '𒅆'],
-          s: ['𒁹', '𒀝', '𒀝', '𒇺', '𒇺'],
-          ñh: ['𒁹', '𒀝', '𒀝', '𒇺', '𒇺'],
-          z: ['𒌓', '𒀸', '𒄨', '𒒃', '𒒃'],
-          ñ: ['𒍝', '𒍝', '𒄨', '𒋛', '𒋛'],
-          k: ['𒑚', '𒇥', '𒈥', '𒈧', '𒑛'],
-          g: ['𒌋', '𒇥', '𒈥', '𒉡', '𒉡'],
-          ng: ['𒄰', '𒇥', '𒄥', '𒄬', '𒄬'],
-          "'": ['𒋡', '𒄿', '𒆗', '𒈨', '𒈨'],
-          '': ['𒋡', '𒄿', '𒆗', '𒈨', '𒈨'],
-          f: ['𒆯', '𒆨', '𒆯', '𒉣', '𒉣'],
-          th: ['𒁹', '𒆩', '𒆯', '𒊮', '𒊮'],
-          x: ['𒁲', '𒂷', '𒆯', '𒁺', '𒁺'],
-          w: ['𒉌', '𒉌', '𒆕', '𒉌', '𒆕'],
-          l: ['𒁍', '𒆰', '𒈪', '𒁍', '𒁍'],
-          j: ['𒉽', '𒄿', '𒆗', '𒄞', '𒃻'],
-        };
-        const vcol = {
-          a: 0, á: 0,
-          e: 1, é: 1, eu: 1, éú: 1,
-          i: 2, í: 2, y: 2, ý: 2,
-          o: 3, ó: 3,
-          u: 4, ú: 4,
-        };
-        let ostr = '';
-        let istr = '';
-        let cstr = '';
-        for (let i = 0; i < pls.length; i++) {
-          if (cuneiform.hasOwnProperty(pls[i])) {
-            let v = 'o';
-            if (i + 1 < pls.length) {
-              if (vcol.hasOwnProperty(pls[i+1])) v = pls[i+1];
-              else v = 'a';
-            }
-            cstr += cuneiform[pls[i]][vcol[v]];
-          } else if (i == 0) {
-            cstr += cuneiform["'"][vcol[pls[i]]];
-          }
-              let d = del.indexOf(i);
-              if (d != -1) continue;
-              let n = denas.indexOf(i);
-              if (n != -1) {
-                  ostr += nasal_vow[pls[i]];
-              } else {
-                  ostr += pls[i];
-              }
-              istr += ipa[pls[i]];
-              // TODO: figure out where the syllable boundary is
-              // so we can add these properly
-              //const primary_stress = 'ˈ';
-              //const secondary_stress = 'ˌ';
-              //let s = stress.indexOf(i);
-          }
-        return [ostr, istr, cstr];
-      };
-      var dispWord = function(conj, prev) {
-          // TODO: vowel deletion
-          // probably also move nasalization in here
-          let ur = prev[prev.length-1][1];
-          let forms = phono(ur);
-          let ret = mkel('span', conj + ': ');
-          ret.appendChild(mkel('b', forms[0]));
-          ret.innerHTML += ' /' + forms[1] + '/ ' + forms[2];
-          //ret.appendChild(mkel('i', '/' + forms[1] + '/'));
-          return ret;
-      };
-      var makeList = function(ls) {
-          var ret = mkel('ul', '');
-          ls.forEach(function(s) {
-              ret.appendChild(mkel('li', s));
-          });
-          return ret;
-      };
-      var makeBox = function(conj, blob, prev) {
-          var ret = mkel('div', '');
-          ret.className = 'conjugation';
-          var c;
-          if (blob.hasOwnProperty('form')) {
-              c = blob.form;
-          } else {
-              c = conjugate(prev, conj);
-          }
-          var pth = prev.concat([[conj, c]]);
-          ret.appendChild(dispWord(conj, pth));
-          ret.appendChild(makeList(blob.gloss));
-          if (blob.note.length) {
-              ret.appendChild(mkel('b', 'Notes:'));
-              ret.appendChild(makeList(blob.note));
-          }
-          for (var k in blob) {
-              if (k == 'gloss' || k == 'note' || k == 'form') {
-                  continue;
-              }
-              ret.appendChild(makeBox(k, blob[k], pth));
-          }
-          return ret;
-      };
-      var makeRow = function(blob) {
-          var retel = document.createElement('tr');
-          var prev;
-          var stem;
-          var key;
-          if (blob.hasOwnProperty('root')) {
-              stem = blob.root.join('-');
-              key = stem + ' ' + blob.root.join('');
-              prev = [["root", blob.root]];
-          } else {
-              stem = blob.stem;
-              key = blob.stem;
-              prev = [["stem", blob.stem]];
-          }
-          retel.id = stem;
-          retel.setAttribute('data-json', escape(JSON.stringify(blob)));
-          retel.setAttribute('data-word', key);
-          retel.appendChild(mkel('td', "<b>" + stem + "</b><br/>" + blob.gloss));
-          var ret = document.createElement('td');
-          retel.appendChild(ret);
-          for (var k in blob.conj) {
-              ret.appendChild(makeBox(k, blob.conj[k], prev));
-          }
-          return retel;
-      };
-      var setup = function() {
-        var defs = document.getElementById('defs');
-        defs.innerHTML = '';
-        for (var i = 0; i < lexicon_flat_arr.length; i++) {
-          defs.appendChild(makeRow(lexicon_flat_arr[i]));
-        }
-        search_nodes = document.getElementById("defs").childNodes;
-        var s;
-        var node;
-        var df;
-        for (var i = 0; i < search_nodes.length; i++) {
-          s = '';
-          node = search_nodes[i];
-          search_all.push(node.outerHTML);
-          search_root.push(node.id);
-          df = node.getElementsByClassName('def');
-          for (var j = 0; j < df.length; j++) {
-            s += df[j].innerHTML + ' ';
-          }
-          search_defs.push(s);
-        }
-      };
-      setup();
-    </script>
   </body>
 </html>

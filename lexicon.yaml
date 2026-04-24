@@ -252,6 +252,14 @@ bwd:
     - drink soup
     - participle:
       - soup
+  instrument:
+    - date: 2026-04-23
+    - bowl
+    - mug
+  causative:
+    - date: 2026-04-23
+    - prepare soup
+    - stew
 tjw:
   date: 2020-12-17
   head: story
@@ -304,7 +312,7 @@ ssp:
   passive:
     - be greeted
     - participle:
-      - vocative:
+      - to-nom:
         - hello
         - note:
             - a moderately informal greeting
@@ -521,19 +529,19 @@ di:
   head: first person
   nom:
     - form: di
-  nom-away:
+  away-nom:
     - form: eni
-  nom-to:
+  to-nom:
     - form: ani
   gen:
     - form: díxi
-  gen-away:
+  away-gen:
     - form: edíxi
-  gen-to:
+  to-gen:
     - form: aníxi
   loc:
     - form: de'en
-  loc-away:
+  away-loc:
     - form: ed'en
   loc-to:
     - form: an'en
@@ -543,14 +551,14 @@ xow:
   head: third person inanimate
   nom:
     - form: xow
-  nom-away:
+  away-nom:
     - form: exow
     - date: 2021-12-06
     - thus
   gen:
     - form: xwi
     - date: 2021-10-31
-  nom-to:
+  to-nom:
     - form: áxow
     - date: 2025-12-22
 ffd:
@@ -903,7 +911,7 @@ bzd:
   perfective:
     - participle:
         - a type of insect native to the mainland
-        - nom-to:
+        - to-nom:
             - (idiomatic)
             - note:
                 - instructing someone to "bugíth amezanel" ("eat towards a buzzing thing") is comparable to the English "jump in a lake" and is partially borrowed and partially calqued from the Sajem Tan "mazuhn kygykum" ("eat a bug") of comparable idiomatic usage
@@ -1010,7 +1018,7 @@ je':
   head: necessary
   root: false
   date: 2022-12-17
-  note: occurs with potential mood to express necessity
+  note: follows a verb in potential mood to express necessity
 ox:
   head: "yes"
   root: false
@@ -1405,7 +1413,7 @@ jan:
   head: inanimate demonstrative
   nom:
     - form: jan
-  nom-away:
+  away-nom:
     - form: éjan
 dzp:
   head: scale
@@ -1452,19 +1460,19 @@ sit:
   head: third person animate
   nom:
     - form: sit
-  nom-away:
+  away-nom:
     - form: esi
-  nom-to:
+  to-nom:
     - form: añhi
   gen:
     - form: síxi
-  gen-away:
+  away-gen:
     - form: esíxi
-  gen-to:
+  to-gen:
     - form: añhíxi
   loc:
     - form: se'en
-  loc-away:
+  away-loc:
     - form: es'en
   loc-to:
     - form: añh'en
@@ -1477,7 +1485,7 @@ kal:
   loc:
     - form: kalen
     - now
-  loc-away:
+  away-loc:
     - form: ekalen
     - from now on
   loc-to:
@@ -1856,3 +1864,30 @@ thbth:
     - hope for something
     - SVC:
       - hopefully
+aj:
+  date: 2026-04-24
+  head: wow
+  root: false
+tlx:
+  date: 2026-04-24
+  head: hold
+  active:
+    - hold
+    - carry
+"'dl":
+  date: 2026-04-24
+  head: regret
+  passive:
+    - regret
+    - S1O1:
+      - I'm sorry
+dang:
+  date: 2026-04-24
+  head: so much
+  root: false
+  note: adjective
+ze:
+  date: 2026-04-24
+  head: polite
+  root: false
+  note: follows a verb and makes the clause a more polite request
