@@ -481,6 +481,9 @@ tbg:
     - laugh
   causative:
     - tell a joke
+  perfective:
+    - date: 2026-04-26
+    - smile
 kgj:
   date: 2020-12-31
   head: begin
@@ -1891,3 +1894,48 @@ ze:
   head: polite
   root: false
   note: follows a verb and makes the clause a more polite request
+tkl:
+  date: 2026-04-26
+  head: push
+  active:
+    - push
+    - shove
+  stative:
+    - be strong
+    - be forceful
+tkt:
+  date: 2026-04-26
+  head: tasty
+  stative:
+    - be tasty
+  causative:
+    - season
+  instrument:
+    - seasoning
+bgs:
+  date: 2026-04-26
+  head: hand on
+  active:
+    - hand on
+    - inculcate
+    - pass down
+  passive:
+    - inherit
+    - receive
+  instrument:
+    - tradition
+ks':
+  head: ask a question
+  date: 2026-04-26
+  active:
+    - ask
+p'z:
+  head: hesitate
+  date: 2026-04-26
+  stative:
+    - hesitate
+spg:
+  head: translate
+  date: 2026-04-26
+  active:
+    - translate

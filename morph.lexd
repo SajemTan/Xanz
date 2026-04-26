@@ -29,25 +29,28 @@ Person Tense
 IrregPersonTense
 
 LEXICON Person
+alé:<s1o1>
 áda:<s1o2>
+á{th}i:<s1o3>
 iza:<s2o1>
 ise:<s2o3>
+gy:<s3ao3>
 le:<s3io3>
 ká:<svc>
 
 LEXICON Tense
-:
+:<pres>
 ji:<pst>
+da:<nearpst>
 ti:<fut>
-wa:<pos>
+wa:<pot>
 zú:<des>
 
 LEXICON IrregPersonTense
-á{th}i:<s1o3>
 á{th}ji:<s1o3><pst>
 á{th}idi:<s1o3><fut>
-gy:<s3ao3>
 gi:<s3ao3><pst>
+iswa:<s2o3><pot> # sometimes
 
 PATTERN Noun
 PrefixCases NounStem SuffixCases

@@ -1,31 +1,31 @@
-all: xanz.hfstol xanz_gen.hfstol xanz_c.hfstol xanz_c_gen.hfstol
+all: morph.xanz.hfstol gen.xanz.hfstol morph.xanz_c.hfstol gen.xanz_c.hfstol r2c.hfstol c2r.hfstol
 
-xanz_gen.hfstol: xanz.hfst
+%.xfst.hfst: %.xfst
+	hfst-regexp2fst -S $< > $@
+
+%.lexd.att: %.lexd
+	lexd $< > $@
+
+%.lexd.hfst: %.lexd.att
+	hfst-txt2fst $< > $@
+
+%.twol.hfst: %.twol
+	hfst-twolc $< > $@
+
+morph.%.hfst: gen.%.hfst
+	hfst-invert $< > $@
+
+%.hfstol: %.hfst
 	hfst-fst2fst -O $< > $@
 
-xanz.hfstol: xanz.hfst
-	hfst-invert $< | hfst-fst2fst -O > $@
+gen.xanz.hfst: morph-phon.hfst reduce.twol.hfst xanz.xfst.hfst
+	hfst-compose-intersect -1 morph-phon.hfst -2 reduce.twol.hfst | hfst-compose -1 - -2 xanz.xfst.hfst > $@
 
-xanz_c_gen.hfstol: xanz_c.hfst
-	hfst-fst2fst -O $< > $@
+gen.xanz_c.hfst: morph-phon.hfst dummy_vowel.xfst.hfst cuneiform.lexd.hfst
+	hfst-compose -1 morph-phon.hfst -2 dummy_vowel.xfst.hfst | hfst-compose -1 - -2 cuneiform.lexd.hfst > $@
 
-xanz_c.hfstol: xanz_c.hfst
-	hfst-invert $< | hfst-fst2fst -O > $@
-
-xanz.hfst: morph-phon.hfst reduce.hfst spell.hfst
-	hfst-compose-intersect -1 morph-phon.hfst -2 reduce.hfst | hfst-compose -1 - -2 spell.hfst > $@
-
-xanz_c.hfst: morph-phon.hfst dummy_vowel.hfst cuneiform.hfst
-	hfst-compose -1 morph-phon.hfst -2 dummy_vowel.hfst | hfst-compose -1 - -2 cuneiform.hfst > $@
-
-morph-phon.hfst: morph.hfst phon.hfst
-	hfst-invert morph.hfst | hfst-compose-intersect -1 - -2 phon.hfst > $@
-
-morph.hfst: morph.att
-	hfst-txt2fst $^ > $@
-
-morph.att: xanz.lexd
-	lexd $^ > $@
+morph-phon.hfst: xanz.lexd.hfst xanz.twol.hfst
+	hfst-invert xanz.lexd.hfst | hfst-compose-intersect -1 - -2 xanz.twol.hfst > $@
 
 xanz.lexd: morph.lexd lexicon.lexd
 	cat $^ > $@
@@ -33,20 +33,11 @@ xanz.lexd: morph.lexd lexicon.lexd
 lexicon.lexd: lexicon.yaml yaml2js.py
 	python3 yaml2js.py
 
-phon.hfst: xanz.twol
-	hfst-twolc $< > $@
+r2c.hfst: morph.xanz.hfst gen.xanz_c.hfst
+	hfst-compose -1 morph.xanz.hfst -2 gen.xanz_c.hfst > $@
 
-reduce.hfst: reduce.twol
-	hfst-twolc $< > $@
+c2r.hfst: r2c.hfst
+	hfst-invert $< > $@
 
-spell.hfst: xanz.xfst
-	hfst-regexp2fst -S $^ > $@
-
-cuneiform.att: cuneiform.lexd
-	lexd $^ > $@
-
-cuneiform.hfst: cuneiform.att
-	hfst-txt2fst $< > $@
-
-dummy_vowel.hfst: dummy_vowel.xfst
-	hfst-regexp2fst -S $^ > $@
+clean:
+	rm -f lexicon.lexd xanz.lexd *.hfst *.att *.hfstol *~

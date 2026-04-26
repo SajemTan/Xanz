@@ -15,8 +15,8 @@ V = í ý ú é ó á %{eu%'%}
 
 Definitions
 
-Onset = ( ? - V )* ;
-Syl = Onset V ;
+Onset = ( ? - V: )* ;
+Syl = Onset V: ;
 
 Rules
 
